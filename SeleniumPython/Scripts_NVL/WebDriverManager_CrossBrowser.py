@@ -5,7 +5,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager, IEDriverManager
 import time
 
-browserName = "edge"  # "chrome"
+browserName = "abc"  # "chrome"
 
 if browserName == "chrome":
     driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -16,7 +16,8 @@ elif browserName == "ie":
 elif browserName == "edge":
     driver = webdriver.Edge(EdgeChromiumDriverManager().install())
 else:
-    print(f"please pass the browser name :" + browserName)
+    print(f"please pass the browser name: {browserName}")
+    raise Exception("driver not found")
 
 driver.implicitly_wait(5)
 driver.get("https://app.hubspot.com/login")
