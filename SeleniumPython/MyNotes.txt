@@ -1,0 +1,21 @@
+NVL:
+ -WebDriverManager
+ -Locators
+ -DropDown and JQuery MultiSelect DropDown
+ -MoveToElement, DragAndDrop, RightClick and UserActions
+ -Alert Pop Up, Frames, File Upload Pop Up and Authentication Pop Up
+ -Browser Back & Forward
+ -Handle Cookies
+ -HeadLess Chrome and Firefox
+ -Screenshot
+ -ImplicitWait
+ -ExplicitWait
+ -Execute JavaScript
+ -Handle Certificate Error
+ -Read Excel Sheet
+
+https://www.the-internet.herokuapp.com/javascript_alerts
+JS Alert
+JS Confirm
+JS Prompt
+
