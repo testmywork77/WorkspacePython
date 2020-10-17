@@ -14,8 +14,11 @@ def select_values(options, values):
                     option.click()
                     break
     else:
-        for option in options:
-            option.click()
+        try:
+            for option in options:
+                option.click()
+        except Exception as e:
+            print(e)
 
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
