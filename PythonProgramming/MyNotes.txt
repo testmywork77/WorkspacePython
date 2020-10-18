@@ -27,5 +27,9 @@ __init__(self) method is a constructor for any Python class
 
 Note:
 1. self should be first parameter inside a constructor i.e. __init__(self), __init__(self, no, name, age)
-2. self should be the first parameter inside instance method i.e. 
+2. self should be the first parameter inside instance method i.e.
+
+Instance Variables:
+Inside Constructor and  Inside Instance Method by using "self" variable
+OutSide of the Class by using Object reference variable
 
