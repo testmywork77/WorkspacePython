@@ -1,0 +1,31 @@
+Classes:
+In Python, everything is an object.
+To create objects, we required Model (or) Blue print, which is nothing but class
+
+Properties - Variables
+Actions - Methods
+
+3 types of variables:
+ 1. Instance Variables (Object Level Variables)
+ 2. Class Variables (Class Level Variables)
+ 3. Local Variables (Method Level Variables)
+
+3 types of methods:
+ 1. Instance Methods
+ 2. Class Methods
+ 3. Static Methods
+
+Create Object:
+Syntax: referenceVariable =  ClassName()
+Ex: s = Student()
+
+Self:
+self is the default variable which is always pointing to current object(like this keyword in Java)
+
+Constructor:
+__init__(self) method is a constructor for any Python class
+
+Note:
+1. self should be first parameter inside a constructor i.e. __init__(self), __init__(self, no, name, age)
+2. self should be the first parameter inside instance method i.e. 
+
