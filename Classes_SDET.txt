@@ -1,0 +1,12 @@
+Class, Object & Constructor
+ -Constructor
+ -Convert local variables into class variables
+-How to call current class method in another method
+-Constructor with arguments
+
+Inheritance Part 2:
+Super() 
+ -To inovke parent class methods
+ -To invoke parent class varibles
+ -To invoke parent class constructor
+

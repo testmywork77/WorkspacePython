@@ -33,3 +33,22 @@ Instance Variables:
 Inside Constructor and  Inside Instance Method by using "self" variable
 OutSide of the Class by using Object reference variable
 
+SDET:
+Class & Objects Part 1:
+
+Class & Objects Part 2:
+Class, Object & Constructor
+ -Constructor
+ -Convert local variables into class variables
+ -How to call current class method in another method
+ -Constructor with arguments
+
+Methods:
+__init__(self)
+__str__(self)
+__del__(self)
+
+Super()
+ -To invoke parent class methods
+ -To invoke parent class variables
+ -To invoke parent class constructor
