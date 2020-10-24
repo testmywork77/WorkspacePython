@@ -10,3 +10,9 @@ Super()
  -To invoke parent class varibles
  -To invoke parent class constructor
 
+Inheritance
+Ploymorphism
+Encapsulation
+Abstraction
+
+
