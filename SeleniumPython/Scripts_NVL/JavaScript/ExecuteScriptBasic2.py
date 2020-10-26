@@ -1,20 +1,27 @@
-# Explicit Wait- alert_is_present
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from webdriver_manager.chrome import ChromeDriverManager
+import time
+
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get('https://mail.rediff.com/cgi-bin/login.cgi')
 driver.maximize_window()
+driver.get("https://amazon.in")
 
 wait = WebDriverWait(driver, 10)
-proceed = wait.until(ec.element_to_be_clickable((By.NAME, 'proceed')))
-proceed.click()
+
+# Generate Alert with JS execute-script method
+driver.execute_script("alert('Hello World');")
 
 alert = wait.until(ec.alert_is_present())
-print(alert.text)
+alert = driver.switch_to.alert
 alert.accept()
+# driver.switch_to.default_content()
 
+# best_sellers = driver.find_element(By.LINK_TEXT, 'Best Sellers')
+# driver.execute_script("arguments[0].click();", best_sellers)
+
+time.sleep(3)
 driver.close()
