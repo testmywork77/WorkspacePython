@@ -1,4 +1,4 @@
-# Explicit Wait- alert_is_present
+# Explicit Wait- presence_of_elements_located
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -7,17 +7,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 wait = WebDriverWait(driver, 10)
-driver.get('https://mail.rediff.com/cgi-bin/login.cgi')
+driver.get('https://www.freshworks.com/')
 driver.maximize_window()
 
-driver.find_element(By.NAME, 'proceed').click()
+footer_links = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'ul.footer-nav li')))
+print(len(footer_links))
 
-wait = WebDriverWait(driver, 10)
-alert = wait.until(ec.alert_is_present())
-print(alert.text)
-alert.accept()
+for link in footer_links:
+    print(link.text)
 
 driver.close()
-
-
-

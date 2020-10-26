@@ -1,4 +1,4 @@
-# Explicit Wait- Title and Element check
+# Explicit Wait- title_is, presence_of_element_located
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
