@@ -1,0 +1,437 @@
+C:\Users\Venkata\AppData\Roaming\Python\Python38\Scripts
+
+SDET:
+	https://testautomationpractice.blogsport.com
+
+NVL:
+	https://app.hubspot/login
+	https://www.orangehrm.com/orangehrm-30-day-trial/
+
+Locators:
+	By.CSS_SELECTOR
+	By.CLASS_NAME
+	By.XPATH
+	By.ID
+	By.LINK_TEXT
+	By.PARTIAL_LINK_TEXT
+	
+Class Objects:
+	Class objects support two kinds of operations: attribute references and instantiation.
+	Attribute references use the standard syntax used for all attribute references in Python: obj.name.
+
+	Ex:
+	class MyClass:
+		"""A simple example class"""
+		i = 12345
+
+		def f(self):
+			return 'hello world'
+
+	then MyClass.i and MyClass.f are valid attribute references, returning an integer and a function object, respectively. Class attributes can also be assigned to, so you can change the value of MyClass.i by assignment. __doc__ is also a valid attribute, returning the docstring belonging to the class: "A simple example class".
+
+	Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. 
+	Ex:
+	x = MyClass()
+
+	creates a new instance of the class and assigns this object to the local variable x.
+
+	The instantiation operation (“calling” a class object) creates an empty object. Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named __init__(), like this:
+	Ex:
+	def __init__(self):
+		self.data = []
+
+	When a class defines an __init__() method, class instantiation automatically invokes __init__() for the newly-created class instance.
+
+	Ex:
+	class Complex:
+		 def __init__(self, realpart, imagpart):
+			self.r = realpart
+			 self.i = imagpart
+
+	x = Complex(3.0, -4.5)
+	print(x.r, x.i)
+
+***Python: 
+	Added in System/User path:
+	C:\Program Files\Python38\Scripts\;C:\Program Files\Python38\;C:\Users\Venkata\AppData\Roaming\Python\Python38\Scripts;
+
+	Python packages installed folder:
+		C:\Users\Venkata\AppData\Roaming\Python\Python38\site-packages
+
+	Steps to create virtual envirnoment and install PIP packages:
+		Install and use packages:
+		$ py -3 -m venv .venv
+		$ .venv\scripts\activate
+		
+	Update pip with latest version:
+		C:\WorkSpacePython>python -m pip install --upgrade pip
+		(or)
+		(.venv) C:\WorkSpacePython\PythonPractice>python -m pip install --upgrade pip	
+		
+	python -m C:/Users/Venkata/anaconda3/Scripts/activate
+
+
+	VS Code Tech Links:
+	Using Python environments in VS Code: https://code.visualstudio.com/docs/python/environments
+
+	Python Interpreters: (https://code.visualstudio.com/docs/python/environments)
+		Base conda environment: 
+			Python 3.8.3.64-bit('base':conda)
+		Virtual conda environment:
+			Python 3.8.3.64-bit('.conda)
+		Global enivronment:
+			Python 3.8.3.64-bit
+		Virtual environment in project folder:
+			Python 3.8.3.64-bit('.venv)		
+			
+	https://code.visualstudio.com/docs/python/jupyter-support
+
+		https://jupyter.readthedocs.io/en/latest/install.html
+		https://jupyter.readthedocs.io/en/latest/install/notebook-classic.html
+		https://jupyter.readthedocs.io/en/latest/running.html#running
+		
+		
+	Installing the classic Jupyter Notebook interface:
+	$ pip install jupyter
+	(or)
+	(.venv) C:\WorkSpacePython\PythonPractice>pip install jupyterlab
+	$ jupyter notebook
+	(or)
+	(.venv) C:\WorkSpacePython\PythonPractice>pip install jupyterlab
+
+	Install Jupyter Lab:
+	$ pip install jupyterlab
+	(or)
+	(.venv) C:\WorkSpacePython\PythonPractice>pip install jupyterlab
+
+	(.venv) C:\WorkSpacePython\PythonPractice>jupyter notebook --version
+	6.1.4
+
+	Open Jupyter Lab:
+	(.venv) C:\WorkSpacePython\PythonPractice>jupyter lab
+		
+	C:\WorkSpacePython>python
+	Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
+	Type "help", "copyright", "credits" or "license" for more information.
+	>>> 2+2
+	4
+	>>> ^Z
+
+	Note:
+	To leave the interactive shell and go back to the console (the system shell), press Ctrl-Z and then Enter on Windows, or Ctrl-D on OS X or Linux. Alternatively, you could also run the python command exit() !
+
+	Update pip with latest version:
+	C:\WorkSpacePython>python -m pip install --upgrade pip
+	Collecting pip
+	  Using cached https://files.pythonhosted.org/packages/43/84/23ed6a1796480a6f1a2d38f2802901d078266bda38388954d01d3f2e821d/pip-20.1.1-py2.py3-none-any.whl
+	Installing collected packages: pip
+	  Found existing installation: pip 19.2.3
+		Uninstalling pip-19.2.3:
+		  Successfully uninstalled pip-19.2.3
+	Successfully installed pip-20.1.1
+
+	Install Requests:
+	C:\WorkSpacePython>pip install requests
+	Requirement already satisfied: requests in c:\python38\lib\site-packages (2.24.0)
+	Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in c:\python38\lib\site-packages (from requests) (1.25.9)
+	Requirement already satisfied: idna<3,>=2.5 in c:\python38\lib\site-packages (from requests) (2.9)
+	Requirement already satisfied: certifi>=2017.4.17 in c:\python38\lib\site-packages (from requests) (2020.6.20)
+	Requirement already satisfied: chardet<4,>=3.0.2 in c:\python38\lib\site-packages (from requests) (3.0.4)
+
+	https://code.visualstudio.com/docs/python/python-tutorial
+	https://code.visualstudio.com/docs/python/environments
+
+	Verify the Python installation:
+	C:\WorkSpacePython\PythonExamples>py -3 --version
+	Python 3.8.3
+
+	pip update in local environment:
+	(.venv) C:\WorkSpacePython\PythonExamples>python -m pip install --upgrade pip
+	Collecting pip
+	  Using cached https://files.pythonhosted.org/packages/43/84/23ed6a1796480a6f1a2d38f2802901d078266bda38388954d01d3f2e821d/pip-20.1.1-py2.py3-none-any.whl
+	Installing collected packages: pip
+	  Found existing installation: pip 19.2.3
+		Uninstalling pip-19.2.3:
+		  Successfully uninstalled pip-19.2.3
+	Successfully installed pip-20.1.1
+
+	Install packages in local envirnoment:
+	(.venv) C:\WorkSpacePython\PythonExamples>python -m pip install matplotlib
+	Collecting matplotlib
+	  Using cached matplotlib-3.2.2-cp38-cp38-win32.whl (9.0 MB)
+	Collecting pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1
+	  Using cached pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+	Collecting cycler>=0.10
+	  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+	Collecting numpy>=1.11
+	  Using cached numpy-1.19.0-cp38-cp38-win32.whl (10.9 MB)
+	Collecting python-dateutil>=2.1
+	  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+	Collecting kiwisolver>=1.0.1
+	  Using cached kiwisolver-1.2.0-cp38-none-win32.whl (43 kB)
+	Requirement already satisfied: six in c:\workspacepython\pythonexamples\.venv\lib\site-packages (from cycler>=0.10->matplotlib) (1.15.0)
+	Installing collected packages: pyparsing, cycler, numpy, python-dateutil, kiwisolver, matplotlib
+	Successfully installed cycler-0.10.0 kiwisolver-1.2.0 matplotlib-3.2.2 numpy-1.19.0 pyparsing-2.4.7 python-dateutil-2.8.1
+
+	$ python --version
+	Python 3.8.3
+
+	$ pip list
+
+	$ pip install selenium
+
+	$ pip install behave
+
+	Python Behave with Selenium:
+	1. Project Creation
+	2. Install selenium and behave project
+
+	Testing Code vs Testing Feature:
+	Testing Code is White Box. Is the code written to do expected things?
+
+	Testing Feature is Black Box. Does the product meet the requirements? -"Integration" or "End-to-End"
+
+	End to End Web UI Testing:
+	Language		Python
+	Core Fraamework		pytest
+	UI Interactions		Page Object Pattern
+	Browser Automation	Selenium WebDriver
+
+	Python Testing with pytest -Brain Okken
+	pytest Quick Start Guide 
+
+	pip install pytest
+
+	tests
+	 -->test_search.py
+
+	https://www.oreilly.com/library/view/python-for-data/9781449323592/
+
+	https://requests.readthedocs.io/en/master/
+
+	https://automationpanda.com/page/2/
+
+
+	*** Flask:
+	Python Version 3.5 and above.
+
+	Optional dependencies
+		These distributions will not be installed automatically. Flask will detect and use them if you install them.
+		1. Blinker: It provides support for Signals.
+		2. SimpleJSON: It, is a fast JSON implementation that is compatible with Python’s json module. It is preferred for JSON operations if it is installed.
+		3. python-dotenv: It, enables support for Environment Variables From dotenv when running flask commands.
+		4. Watchdog: It, provides a faster, more efficient reloader for the development server
+		
+	***Virtual environments:
+	 -Use a virtual environment to manage the dependencies for your project, both in development and in production.
+	 -Virtual environments are independent groups of Python libraries, one for each project. Packages installed for one project will not affect other projects or the operating system’s packages. 
+	 -Python 3 comes bundled with the venv module to create virtual environments. 
+	 
+		Step 1: Create a folder "myproject"
+			C:\WorkSpacePython>mkdir myproject
+		Step 2: Open "myproject" folder
+			C:\WorkSpacePython>cd myproject
+		Step 3: Create an environment
+		C:\WorkSpacePython\myproject>py -3 -m venv venv
+		(or)
+		C:\WorkSpacePython\myproject>python -m venv venv
+		Step 4: Activate the environment:
+			C:\WorkSpacePython\myproject> venv\Scripts\activate
+		Step 5: Install Flask 
+			(venv) C:\WorkSpacePython\myproject>pip install flask
+			Collecting flask
+			  Using cached Flask-1.1.2-py2.py3-none-any.whl (94 kB)
+			Collecting Jinja2>=2.10.1
+			  Using cached Jinja2-2.11.2-py2.py3-none-any.whl (125 kB)
+			Collecting Werkzeug>=0.15
+			  Using cached Werkzeug-1.0.1-py2.py3-none-any.whl (298 kB)
+			Collecting itsdangerous>=0.24
+			  Using cached itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+			Collecting click>=5.1
+			  Using cached click-7.1.2-py2.py3-none-any.whl (82 kB)
+			Collecting MarkupSafe>=0.23
+			  Using cached MarkupSafe-1.1.1-cp38-cp38-win_amd64.whl (16 kB)
+			Installing collected packages: MarkupSafe, Jinja2, Werkzeug, itsdangerous, click, flask
+			Successfully installed Jinja2-2.11.2 MarkupSafe-1.1.1 Werkzeug-1.0.1 click-7.1.2 flask-1.1.2 itsdangerous-1.1.0
+
+		After install the below dependencies comes by default:
+			These distributions will be installed automatically when installing Flask.
+			1. Werkzeug: It, implements WSGI, the standard Python interface between applications and servers.
+			2. Jinja: It is a template language that renders the pages your application serves.
+			3. MarkupSafe: It comes with Jinja. It escapes untrusted input when rendering templates to avoid injection attacks.
+			4. ItsDangerous: It securely signs data to ensure its integrity. This is used to protect Flask’s session cookie.
+			5. Click: It is a framework for writing command line applications. It provides the flask command and allows adding custom management commands.
+		
+		***Update PIP version:
+		(venv) C:\WorkSpacePython\myproject>python -m pip install --upgrade pip
+
+	***Run the specific application:
+	(venv) C:\WorkSpacePython\myproject\apis>python -m hello.py flask run
+							(or)
+	(venv) C:\WorkSpacePython\myproject\apis>set FLASK_APP=hello.py
+	(venv) C:\WorkSpacePython\myproject\apis>python -m flask run
+
+	(venv) C:\WorkSpacePython\myproject\apis>python -m app.py flask run
+							(or)
+	(venv) C:\WorkSpacePython\myproject\apis>set FLASK_APP=app.py
+	(venv) C:\WorkSpacePython\myproject\apis>python -m flask run 
+	 
+***Selenium with Python
+	//WebDriver Basics
+	from selenium import webdriver
+	from selenium.webdriver.common.by import By
+	import time
+
+	driver = webdriver.Chrome(executable_path="C:\\WebDrivers\\chromedriver.exe")
+	driver.implicitly_wait(5)
+	driver.get("http://www.google.com")
+	driver.find_element(By.NAME, 'q').send_keys("naveen automationlabs")
+	elementList = driver.find_elements(By.CSS_SELECTOR, 'ul.erkvQe li span')
+
+	for element in elementList:
+		print(element.text)
+		if element.text == 'naveen automationlabs youtube':
+			element.click()
+			break
+
+	time.sleep(5)
+	driver.quit()
+
+	//WebDriver_Manager
+	from selenium import webdriver
+	from selenium.webdriver.common.by import By
+	import time
+	from webdriver_manager.chrome import ChromeDriverManager
+	from webdriver_manager.firefox import GeckoDriverManager
+	from webdriver_manager.microsoft import IEDriverManager
+	from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+	browserName = "edge"
+
+	if browserName == "chrome":
+		driver = webdriver.Chrome(ChromeDriverManager().install())
+	elif browserName == "firefox":
+		driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+	elif browserName == "ie":
+		driver = webdriver.Ie(IEDriverManager().install())
+	elif browserName == "edge":
+		driver = webdriver.Edge(EdgeChromiumDriverManager().install())
+	else:
+		print(f"Please pass the correct browser name: {browserName}")
+		raise Exception("Driver is not found!")
+
+	driver.implicitly_wait(5)
+	driver.get("https://opensource-demo.orangehrmlive.com/")
+	assert driver.title == "OrangeHRM"
+
+	driver.find_element(By.ID, "txtUsername").send_keys("Admin")
+	driver.find_element(By.ID, "txtPassword").send_keys("admin123")
+	driver.find_element(By.ID, "btnLogin").click()
+	assert driver.title == "OrangeHRM"
+
+	time.sleep(5)
+	driver.quit()
+
+	//demo.py
+	from selenium import webdriver
+
+	def execute(browser, driver):
+		driver.maximize_window()
+		driver.get("https://rahulshettyacademy.com/")
+
+		print(driver.title)
+		print(driver.current_url)
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+		driver.back()
+		driver.refresh()
+		driver.close()
+		print(f"{browser} browser closed")
+
+	browser = "Chrome"
+	# Browser exposes executatble file
+	# Through Selenium test we need to invoke the execuatble file which will then invoke actual browser
+	if browser.lower() == "chrome":
+		driver = webdriver.Chrome(executable_path="C:\\WebDrivers\\chromedriver.exe")
+	elif browser.lower() == "firefox":
+		driver = webdriver.Firefox(executable_path="C:\\WebDrivers\\geckodriver.exe")
+	elif browser.lower() == "edge":
+		driver = webdriver.Edge(executable_path="C:\\WebDrivers\\msedgedriver.exe")
+
+	execute(browser, driver)
+
+	//locators.py:
+	from selenium import webdriver
+	import time
+	driver = webdriver.Chrome(executable_path="C:\\WebDrivers\\chromedriver.exe")
+	driver.get("https://rahulshettyacademy.com/angularpractice/")
+
+	# driver.find_element_by_name("name").send_keys("test123")
+	driver.find_element_by_css_selector("input[name='name']").send_keys("test123")
+	driver.find_element_by_name("email").send_keys("test123@gmail.com")
+	driver.find_element_by_id("exampleCheck1").click()
+	driver.find_element_by_xpath("//input[@type='submit']").click()
+
+	print(driver.find_element_by_class_name("alert-success").text)
+	print(driver.find_element_by_css_selector("div[class*='alert-success']").text)
+	print(driver.find_element_by_xpath("//div[contains(@class,'alert-success')]").text)
+	driver.close()
+
+Python_Selenium:
+
+***WebDriverBasics.py:
+	from selenium import webdriver
+	from selenium.webdriver.common.by import By
+	import time
+
+	driver = webdriver.Chrome(executable_path="C:\\WebDrivers\\chromedriver.exe")
+	driver.implicitly_wait(5)
+	driver.get("http://www.google.com")
+	driver.find_element(By.NAME, 'q').send_keys("naveen automationlabs")
+	elementList = driver.find_elements(By.CSS_SELECTOR, 'ul.erkvQe li span')
+
+	for element in elementList:
+		print(element.text)
+		if element.text == 'naveen automationlabs youtube':
+			element.click()
+			break
+
+	time.sleep(5)
+	driver.quit()
+	
+***WebDriverManager_CrossBrowser.py:
+	from selenium import webdriver
+	from selenium.webdriver.common.by import By
+	import time
+	from webdriver_manager.chrome import ChromeDriverManager
+	from webdriver_manager.firefox import GeckoDriverManager
+	from webdriver_manager.microsoft import IEDriverManager
+	from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+	browserName = "edge"
+
+	if browserName == "chrome":
+		driver = webdriver.Chrome(ChromeDriverManager().install())
+	elif browserName == "firefox":
+		driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+	elif browserName == "ie":
+		driver = webdriver.Ie(IEDriverManager().install())
+	elif browserName == "edge":
+		driver = webdriver.Edge(EdgeChromiumDriverManager().install())
+	else:
+		print(f"Please pass the correct browser name: {browserName}")
+		raise Exception("Driver is not found!")
+
+	driver.implicitly_wait(5)
+	driver.get("https://opensource-demo.orangehrmlive.com/")
+	assert driver.title == "OrangeHRM"
+
+	driver.find_element(By.ID, "txtUsername").send_keys("Admin")
+	driver.find_element(By.ID, "txtPassword").send_keys("admin123")
+	driver.find_element(By.ID, "btnLogin").click()
+	assert driver.title == "OrangeHRM"
+
+	time.sleep(5)
+	driver.quit()
+	
+
+
