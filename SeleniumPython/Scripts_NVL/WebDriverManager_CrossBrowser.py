@@ -5,7 +5,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager, IEDriverManager
 import time
 
-browserName = "abc"  # "chrome"
+browserName = "firefox"  # "chrome"
 
 if browserName == "chrome":
     driver = webdriver.Chrome(ChromeDriverManager().install())

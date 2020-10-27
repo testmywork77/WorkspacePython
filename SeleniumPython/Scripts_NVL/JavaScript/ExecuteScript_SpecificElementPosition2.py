@@ -1,3 +1,4 @@
+# JavaScript Execute Script's Scroll- Top to Bottom and Bottom to Top
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -7,21 +8,13 @@ import time
 
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.implicitly_wait(10)
 driver.maximize_window()
 driver.get("https://amazon.in")
 
-wait = WebDriverWait(driver, 10)
+trendDeals_link = driver.find_element(By.XPATH, "//span[contains(.,'Trending Deals')]")
+print(trendDeals_link.text)
+driver.execute_script("arguments[0].scrollIntoView(true);", trendDeals_link)
 
-# Generate Alert with JS execute-script method
-driver.execute_script("alert('Hello World');")
-
-alert = wait.until(ec.alert_is_present())
-alert = driver.switch_to.alert
-alert.accept()
-# driver.switch_to.default_content()
-
-# best_sellers = driver.find_element(By.LINK_TEXT, 'Best Sellers')
-# driver.execute_script("arguments[0].click();", best_sellers)
-
-time.sleep(3)
+time.sleep(5)
 driver.close()

@@ -7,21 +7,10 @@ import time
 
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.implicitly_wait(10)
 driver.maximize_window()
 driver.get("https://amazon.in")
 
-wait = WebDriverWait(driver, 10)
-
-# Generate Alert with JS execute-script method
-driver.execute_script("alert('Hello World');")
-
-alert = wait.until(ec.alert_is_present())
-alert = driver.switch_to.alert
-alert.accept()
-# driver.switch_to.default_content()
-
-# best_sellers = driver.find_element(By.LINK_TEXT, 'Best Sellers')
-# driver.execute_script("arguments[0].click();", best_sellers)
-
+driver.execute_script("history.go(0);")
 time.sleep(3)
 driver.close()

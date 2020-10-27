@@ -1,4 +1,3 @@
-
 switch_to_active_element()
     Deprecated use driver.switch_to.active_element
 
@@ -14,18 +13,19 @@ switch_to_frame(frame_reference)
 switch_to_window(window_name)
     Deprecated use driver.switch_to.window
 
-
 NVL Links:
-http://www.google.com
-https://amazon.in
-https://www.amazon.co.uk/
-https://app.hubspot.com/login
+    http://www.google.com
+    https://amazon.in
+    https://www.amazon.co.uk/
+    https://app.hubspot.com/login
 
-https://www.reddit.com/
-https://mail.rediff.com/cgi-bin/login.cgi
-https://www.freshworks.com/
-https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/
-https://www.orangehrm.com/orangehrm-30-day-trial/
+    https://www.reddit.com/
+    https://mail.rediff.com/cgi-bin/login.cgi
+    https://www.freshworks.com/
+    https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/
+    https://www.orangehrm.com/orangehrm-30-day-trial/
+
+Only for SSL Certificates: https://expired.badssl.com/
 
 Alerts:
     https://mail.rediff.com/cgi-bin/login.cgi
@@ -54,4 +54,7 @@ https://www.the-internet.herokuapp.com/javascript_alerts
 JS Alert
 JS Confirm
 JS Prompt
+
+Excel Reader Package:
+$ pip install xlrd
 
