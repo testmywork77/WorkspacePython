@@ -10,7 +10,7 @@ driver = webdriver.Chrome(service=objService)
 driver.maximize_window()
 driver.get("https://opensource-demo.orangehrmlive.com")
 
-# By XPath, CssSelector, LinkText, PartialLinkText
+# By XPath, CssSelector
 username = driver.find_element(By.XPATH, "//input[@id='txtUsername']")
 password = driver.find_element(By.CSS_SELECTOR, "input[type='password']")
 login = driver.find_element(By.XPATH, "//input[@value='LOGIN']")

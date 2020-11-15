@@ -1,0 +1,53 @@
+Requirements Files:#
+“Requirements files” are files containing a list of items to be installed using pip install
+
+pip commands:
+# Install a specific version of a package by giving the package name followed by ==/ and the version number:
+$ python -m pip install requests==2.6.0
+
+# Install the latest version of a package by specifying a package’s name:
+$ python -m pip install requests
+
+# Upgrade the package to the latest version:
+$ python -m pip install --upgrade request
+
+# Display information about a particular package:
+$ pip show requests
+
+# Display all of the packages installed in the virtual environment
+$ pip list
+
+# Freeze will produce a similar list of the installed packages in a requirements.txt file:
+$ pip freeze > requirements.txt
+
+$ cat requirements.txt
+
+The requirements.txt can then be committed to version control and shipped as part of an application. Users can then install all the necessary packages with install -r:
+$ python -m pip install -r requirements.txt
+
+# Uninstall/remove the packages from the virtual environment i.e. requests
+$ pip uninstall requests
+
+Note: pip uninstall followed by one or more package names will remove the packages from the virtual environment.
+
+json-server:
+
+    Install JSON Server
+        $ npm install -g json-server
+
+    Create a db.json file
+        {
+          "posts": [
+            { "id": 1, "title": "json-server", "author": "typicode" }
+          ],
+          "comments": [
+            { "id": 1, "body": "some comment", "postId": 1 }
+          ],
+          "profile": { "name": "typicode" }
+        }
+
+    Start JSON Server
+        $ json-server --watch db.json
+
+     Browse http://localhost:3000/posts/1
+     { "id": 1, "title": "json-server", "author": "typicode" }

@@ -1,0 +1,44 @@
+{
+  "shops": [
+    {
+      "id": 1,
+      "name": "Shop1",
+      "location": "Cowley"
+    },
+    {
+      "id": 2,
+      "name": "Shop2",
+      "location": "Oxford City Center"
+    },
+    {
+      "id": 3,
+      "name": "Shop3",
+      "location": "Aylesbury"
+    },
+    {
+      "id": 4,
+      "name": "Shop4",
+      "location": "Milton Keynees"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Venkat",
+      "email": "Venkat@gmail.com",
+      "loc": "Aylesbury"
+    },
+    {
+      "id": 2,
+      "name": "Krishna",
+      "email": "krishna@gmail.com",
+      "loc": "MK"
+    },
+    {
+      "id": 5,
+      "name": "Sri",
+      "email": "Sri@gmail.com",
+      "loc": "London"
+    }
+  ]
+}
