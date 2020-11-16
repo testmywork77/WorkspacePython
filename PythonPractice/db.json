@@ -4,7 +4,7 @@
       "id": 1,
       "name": "name1",
       "email": "name1@gmail.com",
-      "programme": "Front-End",
+      "programme": "FrontEnd",
       "languages": [
         "HTML",
         "CSS",
@@ -15,7 +15,7 @@
       "id": 2,
       "name": "name2",
       "email": "name2@gmail.com",
-      "programme": "Back-End",
+      "programme": "BackEnd",
       "languages": [
         "NodeJS",
         "SpringBoot",

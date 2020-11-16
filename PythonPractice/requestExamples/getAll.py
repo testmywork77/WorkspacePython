@@ -1,7 +1,10 @@
 import requests
 
-response = requests.get('http://localhost:3000/employees')
+url = 'http://localhost:3000/students'
+headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+response = requests.get(url, headers=headers)
 json_response = response.json()
+print(json_response)
 print(type(json_response))  # list
 print(json_response[0])
 # print(json_response[0]["name"])
