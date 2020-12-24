@@ -45,6 +45,16 @@
         "Azure",
         "GCP"
       ]
+    },
+    {
+      "id": 7,
+      "name": "name7",
+      "email": "name7@gmail.com",
+      "programme": "programme7",
+      "languages": [
+        "lang1",
+        "lang2"
+      ]
     }
   ],
   "employees": [
