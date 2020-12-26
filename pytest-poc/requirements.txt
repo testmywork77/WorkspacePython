@@ -1,1 +1,4 @@
 pytest
+requests
+pytest-html
+pytest-cov

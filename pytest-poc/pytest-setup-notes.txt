@@ -165,5 +165,102 @@ toml==0.10.2
                2 File(s)          5,453 bytes
                4 Dir(s)  620,457,467,904 bytes free
 
-(.venv) C:\WorkspacePython\pytest-poc>
 
+# To run tests using pytest test runner
+# Tests executed from Root directory of the project and below is the preffered way from Command Prompt/Git Bash
+(.venv) C:\WorkspacePython\pytest-poc>python -m pytest
+=========================== session starts =================================
+platform win32 -- Python 3.9.1, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
+rootdir: C:\WorkspacePython\pytest-poc
+collected 1 item
+
+tests\test_math.py .                                                                                                                                                  [100%]
+
+=========================== 1 passed in 0.43s ===============================
+
+Note:
+In Python, any folder/directory under project Root folder contains "__init__.py" file  then folder/directory called as Package.
+and other files with "*.py" extension called as python modules under the package.
+
+#-------------------------------------------------------------------
+# Commands and Configs
+#-------------------------------------------------------------------
+  # In the below cases, all tests executed wheather they pass or failed
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest --verbose
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest --quiet
+
+  # To stop test execution once the test failed at any point
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest --existfirst
+
+  # Stopping test execution after 1 failure
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest --
+
+  # To generate report
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest --junit-xml report.xml
+
+#-------------------------------------------------------------------
+# Filtering Tests
+#-------------------------------------------------------------------
+  # pytest will use current diectory and execute all the tests current and sub directories
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest 
+
+  # pytest will execute all the tests in the specified diectory 
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest tests
+
+  # pytest will execute specific test in the specified diectory 
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest tests\test_math.py
+
+  # pytest, will execute specific test case in specific test in a specific directory
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest tests\test_math.py::test_one_plus_one
+
+  # pytest, will execute specific test case in specific test with wildcard character
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest -k one
+
+  # pytest, will execute specific test case in specific test with wildcard character
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest -k "one not accum"
+
+  # pytest markers i.e. cucumber tags
+  Ex:
+  @pytest.mark.math
+  def test_one_plus_one():
+    assert 1 + 1 == 2
+
+  @pytest.mark.accumulator
+  def test_accumulator_init():
+    accum = Accumulator()
+    assert accum.count == 0
+
+  # pytest, executes tests which has only math marker
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest -m math
+
+  # pytest, executes tests which has only accum marker
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest -m accumulator
+
+#-------------------------------------------------------------------
+# Feature Tests
+#-------------------------------------------------------------------
+Testing Code -means, WhiteBox/Unit Testing: Is the code written to do expected things?
+Testing Feaures -means,BlaclBox/Functional/System Test: Doesm the product meet the requirements? i.e. "Integration" or "End-to-End"
+
+#-------------------------------------------------------------------
+# Extending pytest with Plugins
+  pytest-html: used to generate basic html report for test results
+  pytest-cov: used for code coverage
+#-------------------------------------------------------------------
+  Step 1: Add pytest-html package to requirements.txt file
+  Step 2: Install via pip
+    (.venv) C:\WorkspacePython\pytest-poc>pip install -r requirements.txt
+  Step 3: use --html plugin
+    (.venv) C:\WorkspacePython\pytest-poc>python -m pytest --html=report.html
+
+  # Code coverage to specific python module. Done, only for code modules not test folder/modules
+  (.venv) C:\WorkspacePython\pytest-poc>python -m pytest --cov=stuff
+  
+
+
+Ex:
+    def test_divide_by_zero():
+>       num = 1/0
+E       ZeroDivisionError: division by zero
+
+tests\test_math.py:14: ZeroDivisionError
