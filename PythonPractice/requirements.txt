@@ -1,0 +1,2 @@
+###### Requirements without Version Specifiers ######
+requests==2.7.0

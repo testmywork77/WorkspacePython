@@ -1,0 +1,80 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "name1",
+      "email": "name1@gmail.com",
+      "programme": "FrontEnd",
+      "languages": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "name2",
+      "email": "name2@gmail.com",
+      "programme": "BackEnd",
+      "languages": [
+        "NodeJS",
+        "SpringBoot",
+        "Flask",
+        "ASP.NET Web API"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "name3",
+      "email": "name3@gmail.com",
+      "programme": "Database",
+      "languages": [
+        "SQLServer",
+        "Oracle",
+        "MongoDB",
+        "NuoDB"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "name4",
+      "email": "name4@gmail.com",
+      "programme": "Cloud",
+      "languages": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "name7",
+      "email": "name7@gmail.com",
+      "programme": "programme7",
+      "languages": [
+        "lang1",
+        "lang2"
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "name1",
+      "email": "name1@gmail.com",
+      "loc": "loc1"
+    },
+    {
+      "id": 2,
+      "name": "name2",
+      "email": "name2@gmail.com",
+      "loc": "loc2"
+    },
+    {
+      "id": 3,
+      "name": "name3",
+      "email": "name3@gmail.com",
+      "loc": "loc3"
+    }
+  ]
+}
