@@ -1,5 +1,0 @@
-autopep8
-pytest
-requests
-pytest-html
-pytest-cov
