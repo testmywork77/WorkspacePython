@@ -12,7 +12,6 @@ class Response:
 
 
 class APIRequest:
-
     def get(self, url):
         response = requests.get(url)
         return self.__get_responses(response)
@@ -25,7 +24,7 @@ class APIRequest:
         response = requests.delete(url)
         return self.__get_responses(response)
 
-    def __get_responses(self, response):
+    def get_responses(self, response):
         status_code = response.status_code
         text = response.text
 

@@ -11,4 +11,4 @@ class EmployeeClient(BaseClient):
         self.request = APIRequest
 
     def get_all_employees(self):
-        return self.request.get(self.base_url)
+        return self.request.get(self, self.base_url)
