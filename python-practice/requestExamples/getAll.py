@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://localhost:3000/students'
+url = 'http://localhost:3000/employees'
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 response = requests.get(url, headers=headers)
 json_response = response.json()

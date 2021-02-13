@@ -1,0 +1,26 @@
+{
+  "dashboard": {
+    "purchaseAmount": 910,
+    "website": "www.mysite.com"
+  },
+  "courses": [
+    {
+      "title": "Python",
+      "price": 40,
+      "copies": 4,
+      "details": {
+        "site": "https://mysite.com"
+      }
+    },
+    {
+      "title": "Selenium",
+      "price": 45,
+      "copies": 10
+    },
+    {
+      "title": "Cypress",
+      "price": 40,
+      "copies": 4
+    }
+  ]
+}

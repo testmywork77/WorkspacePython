@@ -1,3 +1,0 @@
-Upgrading pip:
-Linux/macOS: $ pip install -U pip
-Windows: python -m pip install -U pip
