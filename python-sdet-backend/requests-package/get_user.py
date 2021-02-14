@@ -1,9 +1,24 @@
 import requests
+from utilities.configurations import *
+from utilities.resources import *
 
 
 p = {"page": 2}
 # resp = requests.get("https://reqres.in/api/users?page=2")
-resp = requests.get("https://reqres.in/api/users", params=p)
+
+# Use params parameter for query string/parameters as dictionary object
+# resp = requests.get("https://reqres.in/api/users", params=p)
+
+# Read baseURI from properties.ini file
+# config = ConfigParser()
+# config.read(r'..\utilities\properties.ini')
+# config.read('../utilities/properties.ini')
+
+config = getConfig()
+print(config['api']['base_uri'])
+url = config['api']['base_uri'] + ApiResources.getUser
+headers = {"Content-Type": "application/json"}
+resp = requests.get(url, params=p, headers = headers)
 print(resp.url)
 statusCode = resp.status_code
 assert statusCode == 200, "response code doesn't match"

@@ -3,7 +3,8 @@ from configparser import ConfigParser
 config = ConfigParser()
 
 config['api'] = {
-    'base_url': 'http://216.10.245.166'
+    'base_uri': 'https://reqres.in/',
+    'book_uri': 'http://216.10.245.166'
 }
 
 config['settings'] = {
@@ -24,4 +25,7 @@ config['files'] = {
 }
 
 with open('dev.ini', 'w') as f:
+    config.write(f)
+
+with open('properties.ini', 'w') as f:
     config.write(f)

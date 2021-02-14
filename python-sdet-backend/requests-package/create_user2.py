@@ -1,10 +1,11 @@
+# External user dictionary
 import requests
-import json
+from payload import *
 
-f = open("user.json", "r").read()
-resp = requests.post("https://reqres.in/api/users", json=json.loads(f))
+
+# resp = requests.post("https://reqres.in/api/users", data=addUserPayload())
+resp = requests.post("https://reqres.in/api/users", json=addUserPayload())
 print(resp.status_code)
 print(resp.json())
-print(resp.headers.get("Content-Type"))
-assert resp.json()['job'] == "Tech Lead"
+assert resp.json()['job'] == "developer"
 

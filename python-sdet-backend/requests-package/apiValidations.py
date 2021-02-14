@@ -1,5 +1,6 @@
 import requests
-import configparser
+from utilities.configurations import *
+from utilities.resources import *
 
 params_dict = {
     "AuthorName": "Rahul Shetty2"
@@ -12,11 +13,15 @@ params_dict = {
 # response = requests.get('http://216.10.245.166/Library/GetBook.php', params=params_dict)
 
 # Get Base_URI from config
-config = configparser.ConfigParser()
-config.read('/utilities/properties.ini')
-print(config['api']['base_url'])
-response = requests.get(config['api']['base_url']+'/Library/GetBook.php', params=params_dict)
+# config = ConfigParser()
+# config.read(r'..\utilities\properties.ini')
+# config.read('../utilities/properties.ini')
 
+config = getConfig()
+print(config['api']['book_uri'])
+url = config['api']['book_uri'] + ApiResources.getBook
+headers = {"Content-Type": "application/json"}
+response = requests.get(url, params=params_dict, headers = headers)
 json_response = response.json()
 assert response.status_code == 200
 # print(type(json_response))
