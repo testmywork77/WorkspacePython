@@ -47,6 +47,17 @@ Step 2: Create Folder Structure
  _Reports
  _Run.bat
 
+Step 3: Automating Login Test Case
+ 3.1 Create LoginPage Object Class under "pageObjects"
+ 3.2 Create LoginTest under "testCases"
+ 3.3 Create conftest.py under "testCases"
 
+Step 4: Capture screenshot on failures
+ 4.1 Update Login Test with Screenshot under "testCases"
+
+Step 5: Read common values from .ini file
+ 5.1 Add "config.ini" file in "Configurations" folder
+ 5.2 Create "readProperties.py" utility file under utlities package to read common data.
+ 5.3 Replace hard-coded values in Login test case
 
 
