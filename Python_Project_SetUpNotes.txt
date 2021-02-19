@@ -1,0 +1,71 @@
+C:\WorkspacePython>md python-hybrid-framework && cd python-hybrid-framework
+
+C:\WorkspacePython\python-hybrid-framework>python -m venv .venv
+
+C:\WorkspacePython\python-hybrid-framework>.venv\Scripts\activate
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>dir
+ Volume in drive C is OS
+ Volume Serial Number is D647-BB7B
+
+ Directory of C:\WorkspacePython\python-hybrid-framework
+
+19/02/2021  07:56    <DIR>          .
+19/02/2021  07:56    <DIR>          ..
+19/02/2021  07:56    <DIR>          .venv
+               0 File(s)              0 bytes
+               3 Dir(s)  709,447,233,536 bytes free
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>pip list
+Package    Version
+---------- -------
+pip        20.2.3
+setuptools 49.2.1
+WARNING: You are using pip version 20.2.3; however, version 21.0.1 is available.
+You should consider upgrading via the 'c:\workspacepython\python-hybrid-framework\.venv\scripts\python.exe -m pip install --upgrade pip' command.
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>python -m pip install --upgrade pip
+Collecting pip
+  Using cached pip-21.0.1-py3-none-any.whl (1.5 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.2.3
+    Uninstalling pip-20.2.3:
+      Successfully uninstalled pip-20.2.3
+Successfully installed pip-21.0.1
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>pip list
+Package    Version
+---------- -------
+pip        21.0.1
+setuptools 49.2.1
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>pip freeze
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>pip freeze > requirements.txt
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>dir
+ Volume in drive C is OS
+ Volume Serial Number is D647-BB7B
+
+ Directory of C:\WorkspacePython\python-hybrid-framework
+
+19/02/2021  08:16    <DIR>          .
+19/02/2021  08:16    <DIR>          ..
+19/02/2021  08:11    <DIR>          .idea
+19/02/2021  07:56    <DIR>          .venv
+19/02/2021  08:14    <DIR>          Notes
+19/02/2021  08:16                 0 requirements.txt
+               1 File(s)              0 bytes
+               5 Dir(s)  709,447,880,704 bytes free
+
+Note: 
+Step 1: Open the project in PyCharm IDE and open requirements.txt file
+Step 2: Enter these below pacakges
+selenium
+pytest
+pytest-html
+pytest-xdist
+openpyxl
+
+(.venv) C:\WorkspacePython\python-hybrid-framework>pip install -r requirements.txt
