@@ -11,11 +11,16 @@ class ReadConfig:
         return url
 
     @staticmethod
-    def getUseremail():
-        username = config.get('common info', 'useremail')
+    def getUserName():
+        username = config.get('common info', 'username')
         return username
 
     @staticmethod
     def getPassword():
         password = config.get('common info', 'password')
         return password
+
+    @staticmethod
+    def getBrowser():
+        browser = config.get('browser info', 'browser')
+        return browser

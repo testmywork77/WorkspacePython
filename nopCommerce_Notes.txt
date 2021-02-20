@@ -60,4 +60,25 @@ Step 5: Read common values from .ini file
  5.2 Create "readProperties.py" utility file under utlities package to read common data.
  5.3 Replace hard-coded values in Login test case
 
+Step 6: Adding logs to test case
+ 6.1 Add customLogger.py under utilities package
+ 6.2 Add logs to Login test case
 
+Step 7: Run tests on Desired Browser/Cross Browser/Parallel
+ 7.1 Update contest.py with required Fixtures which will accept command line argument(browser)
+ 7.2 Pass browser name as argument in command line
+
+To run tests on desired browser
+$ pytest -s -v testCases/test_login.py --browser chrome
+$ pytest -s -v testCases/test_login.py --browser firefox
+
+To run tests parallel
+$ pytest -s -v -n=3 testCases/test_login.py --browser chrome
+$ pytest -s -v -n=3 testCases/test_login.py --browser firefox
+
+Step 8:
+
+
+
+
+$ pytest -v -s testCases/test_login.py
