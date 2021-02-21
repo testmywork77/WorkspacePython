@@ -10,7 +10,7 @@ class TestLogin:
     password = ReadConfig.getPassword()
     logger = LogGen.loggen()
 
-    def dtest_Logging(self):
+    def test_Logging(self):
         self.logger.info("*************** TestLogin *****************")
         self.logger.info("**** test_Logging ****")
 
@@ -35,7 +35,7 @@ class TestLogin:
 
     @pytest.mark.sanity
     @pytest.mark.regression
-    def dtest_login(self, setup):
+    def test_login(self, setup):
         self.logger.info("****Started Login Test****")
         self.driver = setup
         self.driver.get(self.baseURL)

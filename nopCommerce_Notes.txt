@@ -76,9 +76,7 @@ To run tests parallel
 $ pytest -s -v -n=3 testCases/test_login.py --browser chrome
 $ pytest -s -v -n=3 testCases/test_login.py --browser firefox
 
-Step 8:
-
-
-
-
-$ pytest -v -s testCases/test_login.py
+Step 8: Generate pytest HTML Reports
+ 8.1: Update conftest.py with pytest hooks
+ 8.2: To generate HTML report run below command
+	pyest -s -v --html=Reorts\report.html testCases/test_login.py --browser chrome
