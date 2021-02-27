@@ -13,18 +13,11 @@ Phases:
 3. Execution
 4. Maintanance(Version Control & CI/CD)
 
-Admin Area
-Front-End Area
-
 FrontEnd: https://demo.nopcommerce.com/
-email: testmywork77@gmail.com
-pwd: test2468
 
 BackEnd: https://admin-demo.nopcommerce.com
-Admin email: admin@yourstore.com
-Admin password: admin
-
-https://github.com/pavanoltraining/nopCommerceProject
+    email: admin@yourstore.com
+    password: admin
 
 Step 1: Create new Project & Install required packages/plugins
 	Selenium: Selenium Libraries
@@ -113,13 +106,36 @@ Step 11: Grouping Tests
 	pytest -s -v -m "sanity or regression" --html=./Reports/report.html testCases/test_login.py --browser chrome
 
 Step 12: Run tests in Command Prompt & run.bat file
-
-12.1: Create run.bat file
-	pytest -s -v -m "sanity" --html= ./Reports/report.html --browser chrome
+	12.1: Create run.bat file and enter following
+		pytest -s -v -m "sanity" --html=./Reports/report.html testCases/test_sample.py --browser chrome
+		rem pytest -s -v -m "smoke" --html=./Reports/report.html testCases/test_sample.py --browser chrome
+		rem pytest -s -v -m "regression" --html=./Reports/report.html testCases/test_sample.py --browser chrome
+		rem pytest -s -v -m "smoke and regression" --html=./Reports/report.html testCases/test_sample.py --browser chrome
+		rem pytest -s -v -m "sanity and regression" --html=./Reports/report.html testCases/test_sample.py --browser chrome
 	12.2: Open command prompt as Adminstrator and then run run.bat file
+		(.venv) C:\WorkspacePython\python-hybrid-framework>run.bat
 
-Step 13: Push the code to Git&GitHub Repository
-Step 14: 
+Step 13: Push the code to Git&GitHub Repository		
+	https://github.com/testmywork77/WorkspacePython.git
+	
+Step 14: Run Tests using Jenkins CI/CD
+	Jenkins War file:
+		C:\Jenkins\jenkins.war
+
+		java -jar jenkins.war
+		java -jar jenkins.war --httpPort=9090
+		java -jar jenkins.war --httpsPort=9090
+	
+	Jenkins Installed:
+		C:\Program Files (x86)\Jenkins
+		
+		How to run Installed Jenkins:
+		In Control Panel\System and Security\Administrative Tools\ -> Click on "Services"
+
 
 
 $ pytest -s -v -m "sanity" --html=./Reports/report.html testCases/test_sample.py --browser chrome
+
+
+
+

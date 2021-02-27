@@ -18,8 +18,8 @@ params_dict = {
 # config.read('../utilities/properties.ini')
 
 config = getConfig()
-print(config['api']['book_uri'])
-url = config['api']['book_uri'] + ApiResources.getBook
+print(config['API']['book_uri'])
+url = config['API']['book_uri'] + ApiResources.getBook
 headers = {"Content-Type": "application/json"}
 response = requests.get(url, params=params_dict, headers = headers)
 json_response = response.json()
