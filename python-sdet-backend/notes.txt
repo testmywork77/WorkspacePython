@@ -1,0 +1,21 @@
+
+How to fix ModuleNotFoundError and ImportError
+( https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c )
+# set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-sdet-backend
+
+MySQL:
+	Installed Path: C:\Program Files\MySQL
+	Installed Packages:
+		Connector C++ 8.0
+		Connector ODBC 8.0
+		Connector Python 8.0
+		MySQL Router 8.0
+		MySQL Server 8.0
+		MySQL Shell 8.0
+		MySQL Workbench 8.0 CE
+
+	My SQL Connections:
+		Local Instance -> User: root, localhost:3306
+		Service: Mysql@localhost:3306 , User: root , Password: root
+
+	Python MySQL Connector: mysql-connector-python 8.0.23 ( https://pypi.org/project/mysql-connector-python/ )
