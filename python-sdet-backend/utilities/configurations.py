@@ -17,6 +17,10 @@ connect_config = {
 }
 
 
+def getUserBaseURI():
+    return getConfig()['API']['user_uri']
+
+
 def getPassword():
     return "test1234"
 

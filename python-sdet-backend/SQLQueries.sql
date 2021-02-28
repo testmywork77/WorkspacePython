@@ -7,6 +7,17 @@ CREATE DATABASE APIDevelop;
 USE PythonAutomation;
 
 -- Create Table Script
+CREATE TABLE User
+(
+	Name varchar(50),
+	Job varchar(50)	
+);
+-- Insert Scripts
+INSERT INTO User VALUES('Venkat','Developer');
+INSERT INTO User VALUES('Babu','Tester');
+INSERT INTO User VALUES('Ram','DevOps');
+
+-- Create Table Script
 CREATE TABLE CustomerInfo
 (
 	CourseName varchar(50),
@@ -55,3 +66,8 @@ INSERT INTO Storage3 VALUES("selenium","qwer12","qwer","12","Rahul Shetty");
 
 SELECT * FROM Storage3;
 */
+
+USE pythonautomation;
+SELECT * FROM User
+-- SELECT * FROM books;
+-- SELECT * FROM customerinfo
