@@ -3,7 +3,7 @@ from configparser import ConfigParser
 config = ConfigParser()
 
 config['API'] = {
-    'base_uri': 'https://reqres.in',
+    'user_uri': 'https://reqres.in',
     'book_uri': 'http://216.10.245.166',
     'github_uri': 'https://github.com'
 }
