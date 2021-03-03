@@ -16,15 +16,21 @@ def step_impl(context):
 @when("we execute the AddUser API method")
 def step_impl(context):
     # Act
-    context.postUser_response = requests.post(url=context.url, json=context.payLoad)
+    context.response = requests.post(url=context.url, json=context.payLoad)
 
 
 @then("user is successfully added")
 def step_impl(context):
     # Assert
-    assert context.postUser_response.status_code == 201
-    context.statuscode = context.postUser_response.status_code
+    assert context.response.status_code == 201
+    context.statuscode = context.response.status_code
     response_validation(context, context.payLoad['name'], context.payLoad['job'])
+
+
+@then("status code of response should be {statuscode:d}")
+def step_impl(context, statuscode):
+    print(context.response.status_code)
+    assert context.response.status_code == statuscode
 
 
 @given('the user details with {name} and {job}')
@@ -40,26 +46,24 @@ def step_impl(context, statuscode):
     :type context: behave.runner.Context
     :type statuscode: str
     """
-    # raise NotImplementedError(u'STEP: Then ensure AddUser API\'s response code as <statusCode>')
-    assert context.postUser_response.status_code == int(statuscode)
-    context.statuscode = context.postUser_response.status_code
+    assert context.response.status_code == int(statuscode)
+    context.statuscode = context.response.status_code
 
 
-@step("ensure response's name as {name} and job as {job}")
+@then("ensure response's name as {name} and job as {job}")
 def step_impl(context, name, job):
     """
     :type context: behave.runner.Context
     :type name: str
     :type job: str
     """
-    # raise NotImplementedError(u'STEP: And ensure response\'s name as <name> and job as <job>')
     response_validation(context, name, job)
 
 
 def response_validation(context, name, job):
     print("*** response_validation started ***")
-    print(context.postUser_response.json())
-    response_json = context.postUser_response.json()
+    print(context.response.json())
+    response_json = context.response.json()
     context.userId = response_json['id']
     assert response_json['name'] == name
     assert response_json['job'] == job
