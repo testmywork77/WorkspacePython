@@ -1,4 +1,3 @@
-
 How to fix ModuleNotFoundError and ImportError
 ( https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c )
 # set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-sdet-backend
@@ -19,3 +18,13 @@ MySQL:
 		Service: Mysql@localhost:3306 , User: root , Password: root
 
 	Python MySQL Connector: mysql-connector-python 8.0.23 ( https://pypi.org/project/mysql-connector-python/ )
+	
+
+Run all features(Execute all the features in features folder under Project's root folder):
+	(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture
+	
+Run particular/specfic feature:	
+	(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture
+
+Run feature & scenario's based on tags:
+	(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture --tags=smoke
