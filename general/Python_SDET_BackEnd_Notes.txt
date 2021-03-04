@@ -1,0 +1,147 @@
+How to fix ModuleNotFoundError and ImportError
+( https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c )
+# set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-sdet-backend
+
+MySQL:
+	Installed Path: C:\Program Files\MySQL
+	Installed Packages:
+		Connector C++ 8.0
+		Connector ODBC 8.0
+		Connector Python 8.0
+		MySQL Router 8.0
+		MySQL Server 8.0
+		MySQL Shell 8.0
+		MySQL Workbench 8.0 CE
+
+	My SQL Connections:
+		Local Instance -> User: root, localhost:3306
+		Service: Mysql@localhost:3306 , User: root , Password: root
+
+	Python MySQL Connector: mysql-connector-python 8.0.23 ( https://pypi.org/project/mysql-connector-python/ )
+	
+
+How to execute behave features:
+	(.venv) C:\WorkspacePython\python-sdet-backend>behave 
+
+	(.venv) C:\WorkspacePython\python-sdet-backend>behave --no-capture
+
+	(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture
+
+	(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture
+
+	Run all features(Execute all the features in features folder under Project's root folder):
+		(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture
+		
+	Run particular/specfic feature:	
+		(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture
+
+	Run feature & scenario's based on tags:
+		(.venv) C:\WorkspacePython\python-sdet-backend>behave features\User.feature --no-capture --tags=smoke
+
+*** behave BDD Framework ***
+	Python Automation with BDD Framework:
+		1. What tools support BDD framework for Python?
+		2. Install Behave
+		3. Install Professional Edition of PyCharm for BDD Plugins Support
+		4. What are Feature Files, Step Definition files in Behave
+		5. Create Behave BDD Structure in PyCharm project
+		6. Convert existing API Test to BDD Style
+		7. Importance of Context variable
+		8. How to achieve Data driven in BDD Framework
+		9. How to Parameterize the tests with multiple data sets in BDD
+		10. Importance of Tags and Hooks in BDD Framework
+		11. Build setup and Tear down methods with BDD tags and Hooks
+		12. Generate Allure reports for BDD Test results
+
+	Steps to execute behave features including with Allure reports:
+		Step 1:
+		pip install allure-behave
+
+		Step 2:
+		$ behave -f allure_behave.formatter:AllureFormatter -o %allure_result_folder% 
+
+		Step 3:
+		Download Allure Command Line Server
+
+		Step 4 :
+		allure serve %allure_result_folder%
+
+	Allure Reports:
+		How to execute behave features with Allure Reports:
+		Step 1: Install allure-behave python package
+		behave --no-capture -f allure_behave.formatter:AllureFormatter -o AllureReports
+
+		Note: Generate test results in .json files. To convert .json files to actual HTML reports, dowload another packge called Allure.
+
+		Step 2: 
+		 2.a Type "allure download" in Google, choose the GitHub link: https://github.com/allure-framework/allure2/releases
+		 2.b Select Official Allure Website: https://docs.qameta.io/allure/, dowload "Allure Command-Line Server"
+		 
+			Choose Manual installation:
+				1.Download the latest version as zip archive from Maven Central.
+				2.Unpack the archive to allure-commandline directory.
+				3.Navigate to bin directory.
+				4.Use allure.bat for Windows or allure for other Unix platforms.
+				5.Add allure to system PATH.
+				
+			Check the installation:
+				$ allure --version
+				2.0.1
+				Ex:	
+					C:\WorkspacePython>allure --version
+					2.13.5
+					C:\WorkspacePython>
+				
+			https://github.com/allure-framework/allure2
+			
+		allure-commandline:
+		Add allure-commandline to "Path" Environment Variable#	C:\allure-commandline-2.13.5\allure-2.13.5\bin
+			
+		allure-commandline server:	
+		Add allure-commandline server Path to "Path" Environment Variable# C:\allure-2.13.8\allure-2.13.8\bin	
+
+		Step 1:
+			pip install allure-behave
+		Step 2:
+			$ behave -f allure_behave.formatter:AllureFormatter -o %allure_result_folder% 
+		Step 3:
+			Download Allure Command Line Server
+		Step 4 :
+			allure serve %allure_result_folder%
+
+	***To run report in Command Prompt:
+		C:\WorkspacePython\python-sdet-backend>dir
+		 Volume in drive C is OS
+		 Volume Serial Number is D647-BB7B
+
+		 Directory of C:\WorkspacePython\python-sdet-backend
+
+		04/03/2021  07:00    <DIR>          .
+		04/03/2021  07:00    <DIR>          ..
+		04/03/2021  06:38    <DIR>          .idea
+		12/02/2021  21:42    <DIR>          .venv
+		04/03/2021  06:07    <DIR>          AllureReports
+		28/02/2021  17:49    <DIR>          configs
+		13/02/2021  12:17    <DIR>          exampleJSON
+		27/02/2021  20:35    <DIR>          exampleMySQL
+		28/02/2021  18:15    <DIR>          exampleRequests
+		03/03/2021  08:10    <DIR>          features
+		28/02/2021  21:43    <DIR>          payloads
+		04/03/2021  07:00                46 requirements.txt
+		28/02/2021  12:30             1,864 SQLQueries.sql
+		28/02/2021  18:03    <DIR>          utilities
+					   2 File(s)          1,910 bytes
+					  12 Dir(s)  701,986,418,688 bytes free
+
+		C:\WorkspacePython\python-sdet-backend>allure --version
+		2.13.5
+
+		C:\WorkspacePython\python-sdet-backend>allure serve AllureReports
+		Generating report to temp directory...
+		Report successfully generated to C:\Users\Venkata\AppData\Local\Temp\111395576952778501\allure-report
+		Starting web server...
+		2021-03-04 07:02:54.034:INFO::main: Logging initialized @11643ms to org.eclipse.jetty.util.log.StdErrLog
+		Server started at <http://192.168.99.1:50749/>. Press <Ctrl+C> to exit	
+		
+Note:
+Topics 1-9: Develop API Framework design with behave BDD Framework
