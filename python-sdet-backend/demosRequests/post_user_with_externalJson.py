@@ -1,7 +1,7 @@
 import requests
 import json
 
-f = open("./exampleRequests/user.json", "r").read()
+f = open("./demosRequests/user.json", "r").read()
 resp = requests.post("https://reqres.in/api/users", json=json.loads(f))
 print(resp.status_code)
 print(resp.json())
