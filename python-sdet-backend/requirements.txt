@@ -1,4 +1,4 @@
 requests
 mysql-connector-python
 behave
-a
+allure-behave
