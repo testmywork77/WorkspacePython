@@ -1,0 +1,116 @@
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\WorkspacePython>md python-requests && cd python-requests
+
+C:\WorkspacePython\python-requests>python -m venv .venv
+
+C:\WorkspacePython\python-requests>.venv\Scripts\activate
+
+(.venv) C:\WorkspacePython\python-requests>pip list
+Package    Version
+---------- -------
+pip        20.2.3
+setuptools 49.2.1
+WARNING: You are using pip version 20.2.3; however, version 21.0.1 is available.
+You should consider upgrading via the 'c:\workspacepython\python-requests\.venv\scripts\python.exe -m pip install --upgrade pip' command.
+
+(.venv) C:\WorkspacePython\python-requests>python -m pip install --upgrade pip
+Collecting pip
+  Using cached pip-21.0.1-py3-none-any.whl (1.5 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.2.3
+    Uninstalling pip-20.2.3:
+      Successfully uninstalled pip-20.2.3
+Successfully installed pip-21.0.1
+
+(.venv) C:\WorkspacePython\python-requests>pip list
+Package    Version
+---------- -------
+pip        21.0.1
+setuptools 49.2.1
+
+(.venv) C:\WorkspacePython\python-requests>pip freeze
+
+(.venv) C:\WorkspacePython\python-requests>pip freeze > requirements.txt
+
+(.venv) C:\WorkspacePython\python-requests>
+
+************************ Python-SDET-BackEnd ****************************
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\WorkspacePython>md python-sdet-backend
+
+C:\WorkspacePython>cd python-sdet-backend
+
+C:\WorkspacePython\python-sdet-backend>python -m venv .venv
+
+C:\WorkspacePython\python-sdet-backend>.venv\Scripts\activate
+
+(.venv) C:\WorkspacePython\python-sdet-backend>pip list
+Package    Version
+---------- -------
+pip        20.2.3
+setuptools 49.2.1
+WARNING: You are using pip version 20.2.3; however, version 21.0.1 is available.
+You should consider upgrading via the 'c:\workspacepython\python-sdet-backend\.venv\scripts\python.exe -m pip install --upgrade pip' command.
+
+(.venv) C:\WorkspacePython\python-sdet-backend>python -m pip install --upgrade pip
+Collecting pip
+  Using cached pip-21.0.1-py3-none-any.whl (1.5 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.2.3
+    Uninstalling pip-20.2.3:
+      Successfully uninstalled pip-20.2.3
+Successfully installed pip-21.0.1
+
+(.venv) C:\WorkspacePython\python-sdet-backend>pip list
+Package    Version
+---------- -------
+pip        21.0.1
+setuptools 49.2.1
+
+(.venv) C:\WorkspacePython\python-sdet-backend>pip freeze
+
+(.venv) C:\WorkspacePython\python-sdet-backend>dir
+ Volume in drive C is OS
+ Volume Serial Number is D647-BB7B
+
+ Directory of C:\WorkspacePython\python-sdet-backend
+
+12/02/2021  21:42    <DIR>          .
+12/02/2021  21:42    <DIR>          ..
+12/02/2021  21:42    <DIR>          .venv
+               0 File(s)              0 bytes
+               3 Dir(s)  716,856,360,960 bytes free
+
+(.venv) C:\WorkspacePython\python-sdet-backend>pip freeze > requirements.txt
+
+(.venv) C:\WorkspacePython\python-sdet-backend>dir
+ Volume in drive C is OS
+ Volume Serial Number is D647-BB7B
+
+ Directory of C:\WorkspacePython\python-sdet-backend
+
+12/02/2021  21:47    <DIR>          .
+12/02/2021  21:47    <DIR>          ..
+12/02/2021  21:42    <DIR>          .venv
+12/02/2021  21:47                 0 requirements.txt
+               1 File(s)              0 bytes
+               3 Dir(s)  716,852,813,824 bytes free
+
+(.venv) C:\WorkspacePython\python-sdet-backend>
+
+import configparser
+import os
+
+path_current_directory = os.path.dirname(__file__)
+path_config_file = os.path.join(path_current_directory, 'configuration', config.ini)
+config = configparser.ConfigParser()
+config.read(path_config_file)
+
+
+

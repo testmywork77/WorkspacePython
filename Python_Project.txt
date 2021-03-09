@@ -1,0 +1,30 @@
+Selenium Hybrid Framework:
+(Python, Selenium, PyTest, Page Object Model, HTML Reports)
+
+Built-in frameworks:
+ _pytest, unittest, robotframework
+
+Customized/User defined framework:
+ _Datadriven framework, Keyword drvien framework, Hybrid driven framework
+
+Phases:
+1. Analyse applciation, Technology & Skill Set, Choose Test Cases-Smoke, Sanity, Regression, Tests to be/ not to be automate
+2. Design & Implementation for framework
+3. Execution
+4. Maintanance(Version Control & CI/CD)
+
+Admin Area
+Front-End Area
+
+
+FrontEnd: https://demo.nopcommerce.com/
+email: testmywork77@gmail.com
+pwd: test2468
+
+BackEnd: https://admin-demo.nopcommerce.com
+Admin email: admin@yourstore.com
+Admin password: admin
+
+https://github.com/pavanoltraining/nopCommerceProject
+
+

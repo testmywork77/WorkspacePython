@@ -1,0 +1,91 @@
+Python API SDET (API+SQL+SSH+Scrapping):
+
+Part 1: Json Parsers with Python modules
+ -Read and Write to JSON files with Python
+ -API Automation using requests library
+ -Understand CRUD operations GET, POST, DELETE, PUT API methods for automation
+ -Parsing API responses with Python utilities
+
+Part 2: Database interactions with Python SQL Connector
+ -Read the multiple result sets of databse tables from Python
+ -Integrating Database readers with API calls to build JSON payload
+---*** BDD Behave Framework for API Automation ***---
+Part 3: CSV Parser with python modules
+ -Read and Write to CSV files with Python
+ -Interacting with AWS Linux Servers
+
+P4: Establishing SSH connection to Linux using Python Paramiko
+ -Sending the commands and executing the jobs in Server through Python
+ -Uploading and downloading the files of batch jobs from Servers with Paramiko
+
+P5: Importance of Web Scrapping in Data Sciecne projects
+ -Techniques to apply web scrapping to extract content from web pages
+
+Default Python installation path:
+
+
+In Windows: c:\users\Owner\AppData\Local\Programs\Python39
+
+
+
+In Mac: "/usr/local/bin"
+
+Which of the following method can provide the data type of given variable?
+-type()
+
+What does the following code print as output?
+import json
+
+exampleJSON = '{"test1": "sample1", "test2":["Java", "C#", "Python"]}'
+data = json.loads(exampleJSON)
+print(data["test2"][1])
+-C#
+
+Which of the following method can be used to load the external json file?
+-load
+
+What does the following code print as output?
+import json
+ 
+exampleJSON = (
+    '{"test1":[{"lang1": "Java", "lang2": "Python", "other":["fortran", "go", "C"]}]}')
+data = json.loads(exampleJSON) 
+print(data["test1"][0]["other"][1])
+-Go
+
+http://216.10.245.166/Library/GetBook.php?AuthorName=RahulShetty2   
+
+Setting up Global Properties and OAuth Mechanism for API Testing
+1. Setting global configuration using Python configparser 
+2. Optimizing resources and payloads from externally as reusable data
+3. Authenticating API's using Python auth method example
+
+Micellaneous Concepts in API Testing?
+How to crete Session Manager for API request calls?
+s = requests.session()
+s.auth= auth=('username', 'pwd')
+# Can use session object for all the consecutive requests
+
+url1 = "https://api.github.com/user"
+# response1 = requests.get(url, verify=false, auth=('username', 'pwd') )
+response1 = s.get(url1, verify=false)
+
+url2 = "https://api.github.com/user/repos"
+response2 = s.get(url2, verify=false)
+
+
+
+
+Send and Manage cookies thorugh API requests
+Redirection and Time Outs concept usage in API Testing calls
+How to send attachements through API calls with Python requests library?
+
+https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c
+set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-sdet-backend
+
+
+
+
+
+
+
