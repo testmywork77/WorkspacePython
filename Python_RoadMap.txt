@@ -1,0 +1,70 @@
+Few Points To Remember:
+ Focus On End Goal
+ keep Some Time frame
+ Learn Everyday(Continuous Learning)
+ 
+Part1- Start with Jupyter Notebook(2 days)
+ Basic Arithmetic Operations
+ Control and Conditional Structures
+ Looping -For, While
+ User Input
+ Strings
+ Integers
+ Floating Values
+ Typecasting
+
+Part2- Start with Jupyter Notebook(3 days)
+ Strings and Inbuilt functions
+ List and Boolean Variables Inbuilt functions
+ Sets-Inbuilt functions
+ Dictionaries-Ibuilt functions
+ Tuples-Inbuilt functions
+ Functions
+ Lambda Functions
+ Iterators And Generators
+ Exception Handling and Imports libraries
+
+Part3- Start with Jupyter Notebook(4 days)
+ Classes
+ Object
+ Method
+ Inheritance
+ Polymorphism
+ Data Abstraction
+ Encapsulation
+Note: Part 1,2 & 3 -Mandatory for every one.
+
+Data Analyst, Data Scientis
+Part 4- Start with Jupyter Notebook(2 days)
+ Numpy -Play with Arrays
+ Pandas
+ Matplotlib
+ Seaborn
+ Scipy
+
+Path Towards Specialization:
+Framework For Web Development
+Framework For Building Desktop Application
+Libraries for Machine Learning and Deep Learning
+
+Combined Frameworks and Libraries For Machine Learning and Deep Learning:
+ NumPy, Pandas, Flask, Dask, SciPy, matplotlib, Seaborn
+ Keras, TensforFlow, PyTorch, Caffe
+Frameworks For Web Devlopment:
+ Flask
+, Django, Web2Py, TurboGears, CherryPy
+Frameworks For Desktop Application:
+ TKinter, Qt, Kivy
+
+Final Points To Remember:
+ Don't be hard on yourself
+ Give Yourself Time
+ Don't worry much of the outcome
+ keep on Preparing And Learning Continuously
+ Don't feel Demotivated
+
+
+ 
+
+
+
