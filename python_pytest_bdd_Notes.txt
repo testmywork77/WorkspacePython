@@ -2,12 +2,15 @@ set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-pytest-bdd
 
 
 (.venv) C:\WorkspacePython\python-pytest-bdd>set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-pytest-bdd
-
 (.venv) C:\WorkspacePython\python-pytest-bdd>python -m  pytest
-
 (.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest tests\step_defs\test_cucumbers_steps.py
-
 (.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest tests\step_defs\test_publish_article.py
+
+
+
+
+
+
 
 
 Tech Links:

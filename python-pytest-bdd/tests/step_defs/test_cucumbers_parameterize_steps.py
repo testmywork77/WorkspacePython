@@ -1,20 +1,14 @@
-from pytest_bdd import scenarios, scenario, parsers, given, when, then
+from pytest_bdd import scenarios, parsers, given, when, then
 from cucumbers import CucumberBasket
 
-scenarios('../features/cucumbers_parameterize.feature')
 EXTRA_TYPES = {
     'Number': int,
 }
 
-'''
-As more tests are added to the feature file, it becomes a little cumbersome 
-to always add a new test function for every single scenario.
-We like to follow the principle of don't repeat yourself, and most times, we want to include all of the
-scenarios in the feature file when we've run our tests. Thankfully, pytest-bdd includes a helper function to do this.
 
-It's called the scenarios function
 scenarios('../features/cucumbers_parameterize.feature')
 
+'''
 @scenario('../features/cucumbers_parameterize.feature', 'Add cucumbers to a basket')
 def test_add():
     pass
