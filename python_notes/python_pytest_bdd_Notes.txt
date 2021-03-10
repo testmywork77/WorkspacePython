@@ -1,0 +1,120 @@
+set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-pytest-bdd
+
+
+(.venv) C:\WorkspacePython\python-pytest-bdd>set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-pytest-bdd
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m  pytest
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest tests\step_defs\test_cucumbers_steps.py
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest tests\step_defs\test_publish_article.py
+
+# Execute tests based on Tags
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest --verbose -k "service"
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest --verbose -k "web"
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest --verbose -k "web and service"
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest --verbose -k "web or service"
+(.venv) C:\WorkspacePython\python-pytest-bdd>python -m pytest --verbose -k "-not web"
+
+Shared Steps and Hooks:
+
+
+
+Tech Links:
+	https://automationpanda.com/2018/10/22/python-testing-101-pytest-bdd/
+	
+pytest -Python Unit Test Framework
+pytest Plugins:
+	pytest-bdd, for Behavior Driven Development(BDD)
+	pytest-cov, for code coverage
+	pytest-html, for HTML reports
+	pytest-django, for Django app integration
+	pytest-flask, for Flask app integration 
+	
+Books:	
+	Python Testing with pytest -by Brain Okken
+	pytest Quick Start Guide -by Brune Olivera
+	
+Behavior-Driven Python with pytest-bdd:
+	Common Software Development Problems:
+		Team miscommunication
+		Poor Planning
+		Poor documentation
+		Testers don't know the features
+		Autoamtion is difficult to develop
+		Missed deadlines
+
+	How can we solve these problems?
+	 Focus on behaviors
+
+	be.hav.ior -the way in which one acts or conducts oneself.
+
+	In software, a behavior is how a feature operates. A behavior is defined as a scenario of inputs, actions, and outcomes. A product or feature exhibits countless behaviors.
+
+	Web UI
+		Login and Logout
+		Navigating through pages
+		Submitting forms
+
+	Service API
+		Making successful calls
+		Verifying system state change
+		Receiving expected errors
+
+	Real Life:
+		Adding items to a shooping cart
+		Paying for those items at checkout
+
+	Individual Behaviors:
+		Separating individual behaviors makes it easy to define a system without unnecessary repetition or complication.
+
+		For example, let's say that I'm building a shoe store website. There are multiple ways in which I could search for shoes.
+
+		1. Search for “shoes” from the search bar on the homepage.
+		2. Search based on previous queries that I have saved.
+		
+		Either way, those 2 separate behaviors will lead me to the same place, which is viewing a search results page. From there, I could do even more behaviors such as selecting the first link on the results page to view an individual product.
+		Note: Application simply becomes a composition of multiple behaviors working together.
+		
+	Behavior driven development then is simply a process that puts behaviors first in both development and in testing.
+	
+	*BDD Practices:
+		Three Amigos Meetings, are time for the business, development and testing rolls on a team to come together to knock heads and to get on the same page.
+		Example Mapping, is an activity that helps a team define a story and learn what it's about in terms of its rules examples and any questions people may have.
+		Specification by Example, is a way for teams to describe behaviors and really define behaviors using a more formalized language, so that things are crystal clear.
+		Behavior Implementation, is just a fancy way to say that the features get developed and the tests are automated.
+		
+		Behavior specifications are the main artifacts of the BDD process.
+		
+	*Gherkin, by far, is the most popular specification language because most test frameworks use Gherkin.
+		# GIVEN an initial state
+		Given the basket has 2 cucumbers
+
+		# WHEN an action is taken
+		When 4 cucumbers are added to the basket
+
+		# THEN verify outcomes
+		Then the basket contains 6 cucumbers
+		
+		These behaviors specifications, as we can see, are written in plain language so that anyone on the team could understand them.
+		Since behavior specs are basically test cases, it only makes sense to automate them using some sort of test framework.
+		
+		Python has a number of BDD test frameworks. They are pytest-bdd, behave, radish and lettuce.
+		
+	A BDD test framework separtes test cases from test code. It will "glue" each step to a Python function to run it like a script.
+
+	Steps:
+		1. describe behaviour
+		2. define steps in python
+		3. run and watch if fail
+		4. write code to make it pass
+		5. run and watch if pass
+
+
+***pytest plugins:
+	BDD framework with "pytest-bdd"
+	Run tests in parallel with "pytest-xdist"
+	Generate code coverage reports with "pytest-cov"
+	Integrate with popular frameworks using "pytest-django", "pytest-flask", or other similar plugins.
+	
+	
+Automation Panda: https://automationpanda.com/bdd/
+Automation Panda - Python BDD Framework Comparison: https://automationpanda.com/2019/04/02/python-bdd-framework-comparison/
+Cucumber: https://cucumber.io/

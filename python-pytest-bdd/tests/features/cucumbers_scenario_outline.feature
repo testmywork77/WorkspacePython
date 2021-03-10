@@ -1,6 +1,5 @@
 Feature: Cucumber Basket Parameterize
 
-#  @add
   Scenario Outline: Add cucumbers to a basket
     Given the basket has "<initial>" cucumbers
     When "<some>" cucumbers are added to the basket
@@ -11,7 +10,6 @@ Feature: Cucumber Basket Parameterize
       | 2       | 4    | 6     |
       | 5       | 5    | 10    |
 
-#  @remove
   Scenario Outline: Remove cucumbers from the basket
     Given the basket has "<initial>" cucumbers
     When "<some>" cucumbers are removed from the basket
