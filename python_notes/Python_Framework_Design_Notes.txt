@@ -1,0 +1,5 @@
+Selenium Python Framwork Design
+ 1. Python Unit Testign Framework -pytest
+ 2. Understand Logging and HTML Reports
+ 3. Implement Selenium Python Framework from Scratch (Page Object Desing Pattern)
+ 4. Data Driven Framework with Excel to Selenium
