@@ -132,8 +132,6 @@ Step 14: Run Tests using Jenkins CI/CD
 		How to run Installed Jenkins:
 		In Control Panel\System and Security\Administrative Tools\ -> Click on "Services"
 
-
-
 $ pytest -s -v -m "sanity" --html=./Reports/report.html testCases/test_sample.py --browser chrome
 
 
