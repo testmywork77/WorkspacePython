@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.mark.usefixtures('init')
+@pytest.mark.usefixtures("init")
 class TestFixtureAtClassScopeDemo:
     def test_fixtureDemo1(self):
         print("test_fixtureDemo")
