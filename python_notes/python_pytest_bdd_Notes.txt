@@ -15,6 +15,7 @@ set PYTHONPATH=%PYTHONPATH%;C:\WorkspacePython\python-pytest-bdd
 
 Shared Steps and Hooks:
 
+pytest Hooks
 
 
 Tech Links:
