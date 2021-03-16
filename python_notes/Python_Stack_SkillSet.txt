@@ -1,0 +1,10 @@
+Python Skill Set:
+
+Technical skills:
+Python 3.8/3.9, Flask, SQL
+HTTP/Restful API/Json/Patch
+Numpy, Panda
+Pytest/Mockito
+GIT, Docker
+
+Pydantic , JinjaSQL, PySpark
