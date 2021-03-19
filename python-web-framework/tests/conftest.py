@@ -18,7 +18,6 @@ def setup(request):
         driver = webdriver.Chrome(executable_path="C:/WebDrivers/chromedriver.exe")
         print("Launching chrome browser.........")
     # driver.get("http://admin-demo.nopcommerce.com")
-    # https://rahulshettyacademy.com/angularpractice/
     driver.get("https://rahulshettyacademy.com/angularpractice/")
     driver.maximize_window()
     request.cls.driver = driver

@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
+from pageObjects.ConfirmPage import ConfirmPage
 
 
 class CheckOutPage:
     cardTitle = (By.CSS_SELECTOR, ".card-title a")
     cardFooter = (By.CSS_SELECTOR, ".card-footer button")
-    checkOut = (By.CSS_SELECTOR, "a.nav-link.btn.btn-primary")
+    checkOut = (By.CSS_SELECTOR, "a.btn-primary")
+    # Trigger point to move to next page
     checkOutSuccess = (By.CSS_SELECTOR, "button.btn.btn-success")
 
     def __init__(self, driver):
@@ -21,9 +23,9 @@ class CheckOutPage:
             i += 1
             if card_title.text == title:
                 self.driver.find_elements(*CheckOutPage.cardFooter)[i].click()
-
-    def clickCheckOut(self):
         self.driver.find_element(*CheckOutPage.checkOut).click()
 
-    def clickCheckOutSuccess(self):
+    # Trigger point to switch to next page
+    def clickCheckOutItems(self):
         self.driver.find_element(*CheckOutPage.checkOutSuccess).click()
+        return ConfirmPage(self.driver)
