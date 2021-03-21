@@ -13,15 +13,11 @@ class ConfirmPage:
     def __init__(self, driver):
         self.driver = driver
 
-    def enterDeliverLocation(self):
-        try:
-            self.driver.find_element(*ConfirmPage.countryTxt).send_keys("ind")
-            country_link = WebDriverWait(self.driver, 10).until(
-                ec.presence_of_element_located((By.LINK_TEXT, "India")))
-            print('Link exists')
-            country_link.click()
-        except NoSuchElementException:
-            print('Link not exits')
+    def enterDeliverLocation(self, text):
+        self.driver.find_element(*ConfirmPage.countryTxt).send_keys(text)
+
+    def selectDeliveryLocation(self, country_option):
+        country_option.click()
 
     def clickTermsAndConditionsChk(self):
         time.sleep(3)

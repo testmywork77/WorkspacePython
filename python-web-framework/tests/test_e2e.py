@@ -25,8 +25,11 @@ class TestE2E(BaseClass):
         check_out_page.clickAddMobile("Blackberry")
         confirm_page = check_out_page.clickCheckOutItems()  # Final checkOut Items
         # Confirm Page
-        confirm_page.enterDeliverLocation()
-        confirm_page.clickTermsAndConditionsChk()
-        confirm_page.clickPurchase()
+        confirm_page.enterDeliverLocation("ind")
+        country_option = self.verifyLinkPresence("India")
+        if country_option is not None:
+            confirm_page.selectDeliveryLocation(country_option)
+            confirm_page.clickTermsAndConditionsChk()
+            confirm_page.clickPurchase()
         # assert confirm_page.checkPurchaseButtonExists()
         # self.verifyLinkPresence("India")
