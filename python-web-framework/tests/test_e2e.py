@@ -3,10 +3,11 @@ from pageObjects.HomePage import *
 
 
 class TestE2E(BaseClass):
+    """
     def test_homePageTitle(self):
         act_title = self.driver.title
 
-        if act_title == "ProtoCommerce":    # ProtoCommerce / Your store. Login
+        if act_title == "ProtoCommerce":  # ProtoCommerce / Your store. Login
             # self.logger.info("**** Home page title test passed ****")
             # self.driver.close()
             assert True
@@ -15,10 +16,21 @@ class TestE2E(BaseClass):
             # self.driver.save_screenshot(".\\Screenshots\\" + "test_homePageTitle.png")
             # self.driver.close()
             assert False
+    """
 
     def test_e2e(self):
+        # Home Page
         home_page = HomePage(self.driver)
-        check_out_page = home_page.clickShopLink()
+        check_out_page = home_page.clickShopLink()  # To get Shop items
+        # CheckOut Page
         check_out_page.clickAddMobile("Blackberry")
-        check_out_page.clickCheckOut()
-        check_out_page.clickCheckOutSuccess()
+        confirm_page = check_out_page.clickCheckOutItems()  # Final checkOut Items
+        # Confirm Page
+        confirm_page.enterDeliverLocation("ind")
+        country_option = self.verifyLinkPresence("India")
+        if country_option is not None:
+            confirm_page.selectDeliveryLocation(country_option)
+            confirm_page.clickTermsAndConditionsChk()
+            confirm_page.clickPurchase()
+        # assert confirm_page.checkPurchaseButtonExists()
+        # self.verifyLinkPresence("India")
