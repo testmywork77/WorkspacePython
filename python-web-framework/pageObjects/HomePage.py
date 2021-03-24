@@ -4,7 +4,7 @@ import time
 
 
 class HomePage:
-    shop = (By.CSS_SELECTOR, "a[href*='shop']")
+    shop = (By.CSS_SELECTOR, "a[href*='shop123']")
     name = (By.CSS_SELECTOR, ".form-group input[name='name']")
     email = (By.CSS_SELECTOR, ".form-group input[name='email']")
     password = (By.CSS_SELECTOR, "#exampleInputPassword1")

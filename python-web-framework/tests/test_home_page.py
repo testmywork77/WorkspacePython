@@ -8,17 +8,17 @@ import pytest
 class TestHomePage(BaseClass):
 
     # Data feed using List of tuples. Each tuple treated as single data set
-    # @pytest.mark.skip
+    @pytest.mark.skip
     def test_FormSubmission_WithTupleData(self, get_tuple_data):
         self.formSubmission(get_tuple_data)
 
     # Data feed using List of dicts. Each dict treated as single data set
-    # @pytest.mark.skip
+    @pytest.mark.skip
     def test_FormSubmission_WithDictData(self, get_dict_data):
         self.formSubmission(get_dict_data)
 
     # Data feed using List of dicts from external file.
-    # @pytest.mark.skip
+    @pytest.mark.skip
     def test_FormSubmission_WithDictData_External(self, get_dict_data_external):
         self.formSubmission(get_dict_data_external)
 

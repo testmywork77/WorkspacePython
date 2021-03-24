@@ -1,48 +1,61 @@
 import pytest
 from selenium import webdriver
 
+driver = None
+
+
+def pytest_addoption(parser):  # This will get the value from Command Line
+    parser.addoption(
+        "--browser_name", action="store", default="chrome"
+    )
+
 
 @pytest.fixture(scope="class")
 def setup(request):
-    browser = request.config.getoption("browser")
-    if browser == 'chrome':
+    global driver
+    browser_name = request.config.getoption("browser_name")
+    if browser_name == 'chrome':
         driver = webdriver.Chrome(executable_path="C:/WebDrivers/chromedriver.exe")
         print("Launching chrome browser.........")
-    elif browser == 'firefox':
+    elif browser_name == 'firefox':
         driver = webdriver.Firefox(executable_path='C:/WebDrivers/geckodriver.exe')
         print("Launching firefox browser.........")
-    elif browser == 'edge':
+    elif browser_name == 'edge':
         driver = webdriver.Edge(executable_path='C:/WebDrivers/msedgedriver.exe')
         print("Launching firefox browser.........")
     else:
         driver = webdriver.Chrome(executable_path="C:/WebDrivers/chromedriver.exe")
         print("Launching chrome browser.........")
-    # driver.get("http://admin-demo.nopcommerce.com")
     driver.get("https://rahulshettyacademy.com/angularpractice/")
     driver.maximize_window()
+
     request.cls.driver = driver
     yield
     driver.quit()
 
 
-def pytest_addoption(parser):  # This will get the value from Command Line
-    parser.addoption(
-        "--browser", action="store", default="chrome"
-    )
+@pytest.mark.hookwrapper
+def pytest_runtest_makereport(item):
+    """
+        Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
+        :param item:
+        """
+    pytest_html = item.config.pluginmanager.getplugin('html')
+    outcome = yield
+    report = outcome.get_result()
+    extra = getattr(report, 'extra', [])
+
+    if report.when == 'call' or report.when == "setup":
+        xfail = hasattr(report, 'wasxfail')
+        if (report.skipped and xfail) or (report.failed and not xfail):
+            file_name = report.nodeid.replace("::", "_") + ".png"
+            _capture_screenshot(file_name)
+            if file_name:
+                html = '<div><img src="%s" alt="screenshot" style="width:304px;height:228px;" ' \
+                       'onclick="window.open(this.src)" align="right"/></div>' % file_name
+                extra.append(pytest_html.extras.html(html))
+        report.extra = extra
 
 
-'''
-# ########## pytest HTML Report ################
-# It is hook for Adding Environment info to HTML Report
-def pytest_configure(config):
-    config._metadata['Project Name'] = 'nop Commerce'
-    config._metadata['Module Name'] = 'Customers'
-    config._metadata['Tester'] = 'Tester'
-
-
-# It is hook for delete/Modify Environment info to HTML Report
-@pytest.mark.optionalhook
-def pytest_metadata(metadata):
-    metadata.pop("JAVA_HOME", None)
-    metadata.pop("Plugins", None)
-'''
+def _capture_screenshot(name):
+    driver.get_screenshot_as_file(name)
