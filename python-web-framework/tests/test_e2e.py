@@ -17,6 +17,7 @@ class TestE2E(BaseClass):
             # self.driver.close()
             assert False
     """
+
     def test_e2e(self):
         # Home Page
         home_page = HomePage(self.driver)
