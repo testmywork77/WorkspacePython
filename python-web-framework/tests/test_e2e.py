@@ -21,5 +21,6 @@ class TestE2E(BaseClass):
             confirm_page.selectDeliveryLocation(country_option)
             confirm_page.clickTermsAndConditionsChk()
             confirm_page.clickPurchase()
+        assert 1 == 3
         # assert confirm_page.checkPurchaseButtonExists()
         # self.verifyLinkPresence("India")
