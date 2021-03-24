@@ -1,31 +1,20 @@
+import pytest
 from utilities.BaseClass import BaseClass
 from pageObjects.HomePage import *
 
 
 class TestE2E(BaseClass):
-    """
-    def test_homePageTitle(self):
-        act_title = self.driver.title
-
-        if act_title == "ProtoCommerce":  # ProtoCommerce / Your store. Login
-            # self.logger.info("**** Home page title test passed ****")
-            # self.driver.close()
-            assert True
-        else:
-            # self.logger.error("**** Home page title test failed ****")
-            # self.driver.save_screenshot(".\\Screenshots\\" + "test_homePageTitle.png")
-            # self.driver.close()
-            assert False
-    """
-
+    # @pytest.mark.skip
     def test_e2e(self):
-        # Home Page
+        log = self.getLogger()
         home_page = HomePage(self.driver)
         check_out_page = home_page.clickShopLink()  # To get Shop items
+        log.info("Getting all the card titles")
         # CheckOut Page
         check_out_page.clickAddMobile("Blackberry")
         confirm_page = check_out_page.clickCheckOutItems()  # Final checkOut Items
         # Confirm Page
+        log.info("Enter country as ind")
         confirm_page.enterDeliverLocation("ind")
         country_option = self.verifyLinkPresence("India")
         if country_option is not None:
