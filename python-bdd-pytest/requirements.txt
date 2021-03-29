@@ -1,4 +1,0 @@
-pytest
-pytest-bdd
-requests
-selenium
