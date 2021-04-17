@@ -15,8 +15,14 @@ def test_read_all_has_firstname1():
 def test_user_can_be_added():
     first_name = create_new_unique_user()  # First, create user
     users, _ = get_all_users()  # Second , Get all users
-    new_users = search_users_by_first_name(first_name, users)  # Third, check weather the new user exist in users list
-    assert_that(new_users).is_not_empty()
+    new_user = search_users_by_first_name(first_name, users)[0]  # Third, check weather the new user exist in users list
+    assert_that(new_user).is_not_empty()
+    # Delete the created user
+    user_id_to_be_deleted = new_user['id']
+    url = f"{BASE_URI}/{user_id_to_be_deleted}"
+    # Step 6: Trigger the delete request
+    response = requests.delete(url)
+    assert_that(response.status_code).is_equal_to(200)
 
 
 def test_user_can_be_deleted():
@@ -25,11 +31,11 @@ def test_user_can_be_deleted():
     # Step 2: Get all users
     users, _ = get_all_users()
     # Step 3: Search weather the new_user exists in all users based on firstName
-    print(type(search_users_by_first_name(new_user_first_name, users)))
+    # print(type(search_users_by_first_name(new_user_first_name, users)))
     # Step 4: Get the new user object
     new_user = search_users_by_first_name(new_user_first_name, users)[0]
-    print(new_user)
-    print(type(new_user))
+    # print(new_user)
+    # print(type(new_user))
     # Step 5: Get id of user object
     user_id_to_be_deleted = new_user['id']
     url = f"{BASE_URI}/{user_id_to_be_deleted}"
