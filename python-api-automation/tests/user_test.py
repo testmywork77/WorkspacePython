@@ -4,54 +4,68 @@ from json import dumps, loads
 from config import BASE_URI
 
 
+# Get All -> Assert
 def test_user_get_all():
+    # Act
     users = get_all_users()
+    # Assert
     assert_that(users).is_not_empty()
 
 
+# Get -> Assert
 def test_user_get_by_id():
-    user_id = 1
-    # Step 1: Call "get_user_by_id", return user object
-    user = get_user_by_id(user_id)
-    # Step 2: Check weather user object is not null or not
+    # Arrange - Create user
+    user_id = 99
+    user_dict = user_dict_create(user_id)  # user dictionary
+    user_new = create_new_user(user_dict)  # return created new user
+
+    # Act - Get user based on id
+    response = get_user_by_id(user_new["id"])
+
+    # Assert
+    assert_that(response.status_code).is_equal_to(200)
+    assert_that(response.status_code).is_equal_to(requests.codes.ok)
+    user = response.json()
     assert_that(user).is_not_empty()
     assert_that(user["id"]).is_equal_to(user_id)
 
+    # Teardown
+    delete_user_by_id(user_new["id"])  # delete user_new
 
+
+# User: Get -> Assert
 def test_user_get_based_on_firstname():
+    # Arrange
     users = get_all_users()
+
+    # Assert
     first_names = [user['firstName'] for user in users]  # Python - List Comprehension
     assert_that(first_names).contains('firstName1')
 
 
-def test_user_can_be_added():
+# User: Create -> Get -> Assert -> Delete
+def test_user_can_be_created():
+    # Arrange - Create user
     user_id = 99
-
-    # Step 1: Create user dictionary
     user_dict = user_dict_create(user_id)
 
-    # Step 2: Call "create_new_user" method with post request
-    user_new = create_new_user(user_dict)  # First, create user
-    assert_that(user_new).is_not_empty()
+    # Act - Create user
+    user_new = create_new_user(user_dict)   # return created new user
 
-    # Step 3: Call "get_user_by_id", return user object
-    user = get_user_by_id(user_new["id"])
+    # Assert - Check user exists or not
+    assert_that(user_new).is_not_empty()  # check weather user is empty/null
+    response = get_user_by_id(user_new["id"])
+    assert_that(response.status_code).is_equal_to(200)
+    assert_that(response.status_code).is_equal_to(requests.codes.ok)
+    user = response.json()
     assert_that(user).is_not_empty()
+    assert_that(user["id"]).is_equal_to(user_id)
 
-    # Step 4: Call "
-
-
-    # # Third, check weather the new user exist in users list
-    # new_user = search_users_by_first_name(first_name, users)[0]
-    # assert_that(new_user).is_not_empty()
-    # # Delete the created user
-    # user_id_to_be_deleted = new_user['id']
-    # url = f"{BASE_URI}/{user_id_to_be_deleted}"
-    # # Step 6: Trigger the delete request
-    # response = requests.delete(url)
-    # assert_that(response.status_code).is_equal_to(200)
+    # Teardown
+    delete_user_by_id(user_new["id"])  # delete user_new
 
 
+# User: Create -> Delete -> Get -> Assert
 def test_user_can_be_deleted():
     # Arrange - Create user
     user_id = 99
@@ -63,33 +77,32 @@ def test_user_can_be_deleted():
     delete_user_by_id(user_new["id"])
 
     # Assert - Check user exists or not
-    user = get_user_by_id(user_id)  # return user dictionary
+    response = get_user_by_id(user_new["id"])
+    assert_that(response.status_code).is_equal_to(404)
+    user = response.json()
+    assert_that(user).is_empty()
 
-        
+
 # List Comprehension returns list
 def search_users_by_first_name(first_name, users):
     return [user for user in users if user['firstName'] == first_name]
 
 
-# Returns user dictionary
+# Return user dictionary
 def get_user_by_id(user_id):
     url = f"{BASE_URI}/{user_id}"
     response = requests.get(url)
-    assert_that(response.status_code).is_equal_to(200)
-    assert_that(response.status_code).is_equal_to(requests.codes.ok)
-    user = response.json()
-    assert_that(user["id"]).is_equal_to(user_id)
-    return user
+    return response
 
 
-# Returns user dictionary
+# Delete user
 def delete_user_by_id(user_id):
     url = f"{BASE_URI}/{user_id}"
     response = requests.delete(url)
     assert_that(response.status_code).is_equal_to(200)
 
 
-# Returns users i.e. List of user dictionaries
+# Return users list i.e. List of user dictionaries
 def get_all_users():
     response = requests.get(BASE_URI)
     assert_that(response.status_code).is_equal_to(200)
@@ -97,6 +110,7 @@ def get_all_users():
     return users
 
 
+# Create new user dictionary
 def create_new_user(user_dict):
     # dumps method converts "python dictionary" to "json". It's Serialization
     payload = dumps(user_dict)
@@ -110,6 +124,7 @@ def create_new_user(user_dict):
     return user_created
 
 
+# Create and return user dictionary
 def user_dict_create(user_id):
     new_user_id = user_id
     user_dict = {
