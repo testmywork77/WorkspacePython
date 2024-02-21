@@ -1,0 +1,3 @@
+Refered Tech Links:
+    https://www.freecodecamp.org/news/learn-python-basics/
+
