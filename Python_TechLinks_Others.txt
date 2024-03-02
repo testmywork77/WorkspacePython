@@ -1,0 +1,15 @@
+Python:
+	HOW DO I START LEARNING PYTHON? https://automationpanda.com/2020/02/18/how-do-i-start-learning-python/
+	Book -Automate the Boring Stuff with Python: https://automatetheboringstuff.com/
+	Learn X in Y minutes: https://learnxinyminutes.com/docs/python/
+	
+	
+	Python Virtual Environments: A Primer: https://realpython.com/python-virtual-environments-a-primer/
+	
+Documentation Links:
+Python:
+	Primer on Python Decorators: https://realpython.com/primer-on-python-decorators/
+pytest:
+	How to write and report assertions in tests: https://docs.pytest.org/en/stable/how-to/assert.html
+	How to parametrize fixtures and test functions: https://docs.pytest.org/en/stable/how-to/parametrize.html#parametrize-basics
+	Parametrizing tests: https://docs.pytest.org/en/stable/example/parametrize.html#paramexamples
