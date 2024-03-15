@@ -6,6 +6,7 @@ inflection==0.5.1
 packaging==24.0
 pytz==2024.1
 PyYAML==6.0.1
+setuptools==69.2.0
 sqlparse==0.4.4
 tzdata==2024.1
 uritemplate==4.1.1

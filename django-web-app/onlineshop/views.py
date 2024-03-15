@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-from .models import Order
-from .serializers import OrderSerializer
+from .models import Order, Category, Product
+from .serializers import OrderSerializer, CategorySerializer
 
 from rest_framework.views import APIView
 from rest_framework import status
@@ -28,6 +28,7 @@ class OrderView(APIView):
                 'message': "Something went wrong while fetching the data"
             }, status= status.HTTP_400_BAD_REQUEST)
 
+
     # Create a new order
     def post(self, request):
         try:
@@ -40,8 +41,8 @@ class OrderView(APIView):
                 'message': "Something went wrong"
             }, status= status.HTTP_400_BAD_REQUEST)
 
-            subject = "New Order is Placed" 
-            message = "Dear Customer" + " " + data['customer_name'] + " Your order is placed now. Thanks for your order"
+            # subject = "New Order is Placed" 
+            # message = "Dear Customer" + " " + data['customer_name'] + " Your order is placed now. Thanks for your order"
             # email = data['customer_email']
             # recipient_list = [email]
             # send_mail(subject, message, EMAIL_HOST_USER, recipient_list, fail_silently=True) 
@@ -113,4 +114,24 @@ class OrderView(APIView):
               return Response({
                 'data': {},
                 'message': "Something went wrong in deleting the Order"
+            }, status= status.HTTP_400_BAD_REQUEST)
+
+class CategoryView(APIView):
+    
+    # Get all orders
+    def get(self, request):
+        try:
+            category = Category.objects.all()
+            serializer = CategorySerializer(category, many=True)
+
+            return Response({
+                'data': serializer.data,
+                'message': "category Data fetched Successfully"
+            }, status= status.HTTP_200_OK)
+
+        except Exception as e:
+            print(e)
+            return Response({
+                'data': {},
+                'message': "Something went wrong while fetching the data"
             }, status= status.HTTP_400_BAD_REQUEST)

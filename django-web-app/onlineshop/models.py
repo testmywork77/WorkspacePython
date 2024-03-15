@@ -32,4 +32,4 @@ class Order(TimeStampModel):
     quantity = models.PositiveIntegerField()
 
     def __str__(self):
-        return f"Order for {self.id}"    
+        return f"Order for #1"    
