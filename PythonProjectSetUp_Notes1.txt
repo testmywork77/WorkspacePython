@@ -1,3 +1,21 @@
+What are Django's prerequisites?
+(https://docs.djangoproject.com/en/5.0/faq/install/#faq-python-version-support)
+    1. Django requires Python. 
+    2. For a development environment - if you just want to experiment with Django - you don't need to have a separate web server installed or database server. Django comes with its own lightweight development server.
+    3. Django comes with its own lightweight development server. For a production environment, Django follows the WSGI spec, PEP 3333, which means it can run on a variety of web servers. See Deploying Django for more information.
+    4. Django runs SQLite by default, which is included in Python installations. For a production environment, we recommend PostgreSQL; but we also officially support MariaDB, MySQL, SQLite, and Oracle.
+
+What Python version can I use with Django? 
+    Django(5.0) -> Python Versions(3.10, 3.11, 3.12)
+
+How to install Django on Windows?
+
+
+
+
+
+
+
 Install virtualenv globally
     C:\WorkspacePython> pip install virtualenv
 

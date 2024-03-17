@@ -7,6 +7,9 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 
+from django.core.mail import send_mail
+from backend.settings import EMAIL_HOST_USER
+
 # Create your views here.
 class OrderView(APIView):
     
@@ -28,7 +31,6 @@ class OrderView(APIView):
                 'message': "Something went wrong while fetching the data"
             }, status= status.HTTP_400_BAD_REQUEST)
 
-
     # Create a new order
     def post(self, request):
         try:
@@ -41,11 +43,11 @@ class OrderView(APIView):
                 'message': "Something went wrong"
             }, status= status.HTTP_400_BAD_REQUEST)
 
-            # subject = "New Order is Placed" 
-            # message = "Dear Customer" + " " + data['customer_name'] + " Your order is placed now. Thanks for your order"
-            # email = data['customer_email']
-            # recipient_list = [email]
-            # send_mail(subject, message, EMAIL_HOST_USER, recipient_list, fail_silently=True) 
+            subject = "New Order is Placed" 
+            message = "Dear Customer" + " " + data['customer_name'] + " Your order is placed now. Thanks for your order"
+            email = data['email']
+            recipient_list = [email]
+            send_mail(subject, message, EMAIL_HOST_USER, recipient_list, fail_silently=True) 
             serializer.save()
 
             return Response({
@@ -79,6 +81,11 @@ class OrderView(APIView):
                   'message': "Something went wrong"
                 }, status= status.HTTP_500_BAD_REQUEST)
 
+            subject = "Order is Updated" 
+            message = "Dear Customer" + " " + data['customer_name'] + " Your order is updated now. Thanks for your order"
+            email = data['email']
+            recipient_list = [email]
+            send_mail(subject, message, EMAIL_HOST_USER, recipient_list, fail_silently=True) 
             serializer.save()
 
             return Response({
@@ -96,7 +103,7 @@ class OrderView(APIView):
     def delete(self, request):
         try:
             data =request.data
-            order = Order.objects.filter(id =data.get('id'))
+            order = Order.objects.filter(id = data.get('id'))
             
             if not order.exists():
                return Response({
