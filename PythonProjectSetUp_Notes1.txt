@@ -106,4 +106,14 @@ Step 9: Run Django project i.e.  C:\WorkspacePython\django-rest-framework\backen
 Step 10. Create startapp i.e. products in home folder
     C:\WorkspacePython\django-rest-framework\backend> python manage.py startapp products
 
+***Flask Project Notes:
+How to run a Flask app in a Docker container?
+1. Download and install Dockekr Desktop
+2. Create a Dockerfile in the project's rool directory
+3. Create a Docker image with this command i.e.
+    (.venv) C:\WorkspacePython\flask-store-app>docker build -t flask-store-rest-apis .
+4. Run the docker image
+    (.venv) C:\WorkspacePython\flask-store-app>docker run -p 5005:5000 <<tag of image name>>
+    (.venv) C:\WorkspacePython\flask-store-app>docker run -p 5005:5000 flask-store-rest-apis
+5.
 
