@@ -10,19 +10,15 @@ What Python version can I use with Django?
 
 How to install Django on Windows?
 
-
-
-
-
-
-
 Install virtualenv globally
     C:\WorkspacePython> pip install virtualenv
 
 List pip installed global packages
     C:\WorkspacePython> pip list
 
-Steps to create project folder with virtual environment?
+*********************************************************
+Steps to create project folder with virtual environment? 
+*********************************************************
 Step 1: Create project folder i.e. django-backend-app
     C:\WorkspacePython> mkdir django-backend-app 
 
@@ -73,7 +69,7 @@ Step 14: Run admin application
     
     b. To get/show DB(i.e. tabels) in admin panel -register all the models in onlineshop/admin.py file
 
-// 
+// Django Rest Framework
 Step 15: Install "djangorestframework" pip package in virtual folder
     > pip install djangorestframework
 
@@ -92,3 +88,32 @@ Step 21: Set up "Swagger" in this application
  a. Install "drf_yasg" pip package 
 
 Step 22(Optional): Set up "Swagger" in this application
+
+
+// New Django project
+// https://www.youtube.com/watch?v=c708Nf0cHrs&list=PLEsfXFp6DpzRKcXDuQq0mYbqGy62yZH-T&index=6&t=15475s
+Step 1: Create folder django-rest-framework folder, Change directory to "django-rest-framework" folder.
+Step 2: Create 2 more floders 1. backend 2. py_client in "django-rest-framework" folder
+Step 3: Create startproject i.e. home // also called root project folder
+    C:\WorkspacePython\django-rest-framework\backend>django-admin startproject home
+Step 4. Create startapp i.e. api
+    C:\WorkspacePython\django-rest-framework\backend>python manage.py startapp api
+Step 5: Add startapp application i.e. api to "INSTALLED_APPS" section in home/settings.py file
+Step 6: Crate API view in "api/views.py" file
+Step 7: Create "urls.py" file in "api" folder and urlpatterns array for paths
+Step 8: Include "api/ur.py" to "home/urls.py" file and add to "urlpatterns" array.
+Step 9: Run Django project i.e.  C:\WorkspacePython\django-rest-framework\backend> python manage.py runserver
+Step 10. Create startapp i.e. products in home folder
+    C:\WorkspacePython\django-rest-framework\backend> python manage.py startapp products
+
+***Flask Project Notes:
+How to run a Flask app in a Docker container?
+1. Download and install Dockekr Desktop
+2. Create a Dockerfile in the project's rool directory
+3. Create a Docker image with this command i.e.
+    (.venv) C:\WorkspacePython\flask-store-app>docker build -t flask-store-rest-apis .
+4. Run the docker image
+    (.venv) C:\WorkspacePython\flask-store-app>docker run -p 5005:5000 <<tag of image name>>
+    (.venv) C:\WorkspacePython\flask-store-app>docker run -p 5005:5000 flask-store-rest-apis
+5.
+
