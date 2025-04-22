@@ -1,0 +1,80 @@
+Install virtualenv globally
+    C:\WorkspacePython> pip install virtualenv
+
+List pip installed global packages
+    C:\WorkspacePython> pip list
+	
+	
+*********************************************************
+Steps to create project folder with virtual environment? 
+*********************************************************
+Step 1: Create project folder i.e. flask-web-app
+    C:\WorkspacePython> mkdir flask-web-app 
+
+Step 2: Change project folder to "flask-web-app"
+    C:\WorkspacePython> cd flask-web-app
+
+Step 3: To create virtual environment i.e. "env" using "virtualenv" pacakge
+    C:\WorkspacePython\django-web-app> virtualenv env
+
+Step 4: To activate "virtual environment"
+    C:\WorkspacePython\django-web-app> .\env\bin\activate
+
+Step 5: To deactivate "virtual environment"
+    C:\WorkspacePython\django-web-app> deactivate
+
+// Set up Django project:
+Step 6: To activate "virtual environment"
+    C:\WorkspacePython\django-web-app>.\env\bin\activate
+
+Step 7: Install Django in virtualenv folder
+    C:\WorkspacePython\django-web-app>pip install django
+
+Step 8: Create requirements.txt file
+    C:\WorkspacePython\django-web-app>pip freeze > requirements.txt
+
+Step 9: Create project i.e. backend
+    C:\WorkspacePython\django-web-app>django-admin startproject backend .
+
+Step 10. Create application i.e. onlineshop
+    C:\WorkspacePython\django-web-app> python manage.py startapp onlineshop
+
+// Create DB migrations script and create DB and display/show models in Djang admin
+Step 11. Make DB migrations script i.e. 001_initial.py
+   > python manage.py makemigrations
+
+Step 12. Create Database
+    > python manage.py migrate
+
+Step 13: To create super user for admin
+    > python manage.py createsuperuser
+
+Step 14: Run admin application
+    > python manage.py runserver
+
+    App is running in the following environment: http://127.0.0.1:8000/
+
+    a. http://127.0.0.1:8000/admin/ -enter user name: "admin" and password: "testadmin"
+    
+    b. To get/show DB(i.e. tabels) in admin panel -register all the models in onlineshop/admin.py file
+
+// Django Rest Framework
+Step 15: Install "djangorestframework" pip package in virtual folder
+    > pip install djangorestframework
+
+Step 16: Update this package "djangorestframework" to requirements.txt file with the below command
+    > pip freeze > requirements.txt
+
+Step 17: Create "OrderSerializer" serializer class in  onlineshop\serializers.py file
+
+Step 18: Create views in onlineshop\views.py file
+
+Step 19: Create urls in onlineshop\urls.py file
+
+Step 20: Include "onlineshop.urls" folder in "backends/urls.py" file
+
+Step 21: Set up "Swagger" in this application
+ a. Install "drf_yasg" pip package 
+
+Step 22(Optional): Set up "Swagger" in this application
+
